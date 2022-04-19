@@ -127,7 +127,8 @@ public class Main {
             System.out.println(tebakan);
             System.out.println("Guess : ");
             System.out.printf("Masukan aja mas");
-            //gnambah 
+            // gnambah 
+            // Tambahan
             System.out.println("Test");
             String inp=scan.nextLine();
             String temp="";

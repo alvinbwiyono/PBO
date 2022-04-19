@@ -128,6 +128,7 @@ public class Main {
             System.out.println("Guess : ");
             System.out.printf("Masukan aja mas");
             //gnambah 
+            System.out.println("Test");
             String inp=scan.nextLine();
             String temp="";
             for(int i=0;i<jawab.length();i++){

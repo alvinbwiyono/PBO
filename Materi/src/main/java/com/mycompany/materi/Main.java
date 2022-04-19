@@ -129,6 +129,7 @@ public class Main {
             System.out.printf("Masukan aja mas");
             // gnambah 
             // Tambahan
+            //saya nulis ini barusan
             System.out.println("Test");
             String inp=scan.nextLine();
             String temp="";

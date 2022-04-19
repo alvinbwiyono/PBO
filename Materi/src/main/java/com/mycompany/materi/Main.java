@@ -126,6 +126,8 @@ public class Main {
             System.out.println("Life = "+live);
             System.out.println(tebakan);
             System.out.println("Guess : ");
+            System.out.printf("Masukan aja mas");
+            //gnambah 
             String inp=scan.nextLine();
             String temp="";
             for(int i=0;i<jawab.length();i++){

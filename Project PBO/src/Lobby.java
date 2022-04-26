@@ -40,6 +40,8 @@ public class Lobby extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        play1 = new javax.swing.JButton();
+        play2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,6 +81,28 @@ public class Lobby extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
+        play1.setBackground(new java.awt.Color(255, 255, 0));
+        play1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        play1.setForeground(new java.awt.Color(0, 0, 0));
+        play1.setText("PLAY");
+        play1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                play1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+
+        play2.setBackground(new java.awt.Color(255, 255, 0));
+        play2.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        play2.setForeground(new java.awt.Color(0, 0, 0));
+        play2.setText("PLAY");
+        play2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                play2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -97,6 +121,14 @@ public class Lobby extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_play1ActionPerformed
+
+    private void play2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_play2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -107,5 +139,7 @@ public class Lobby extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton play;
+    private javax.swing.JButton play1;
+    private javax.swing.JButton play2;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,7 +19,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         this.setTitle("VSPokemon");
-        this.setSize(800,500);
+        this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         // membuat titik x dan y

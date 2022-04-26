@@ -19,7 +19,7 @@ public class Lobby extends javax.swing.JFrame {
     public Lobby() {
         initComponents();
         this.setTitle("VSPokemon");
-        this.setSize(800,500);
+        this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
 
         // membuat titik x dan y
@@ -36,7 +36,7 @@ public class Lobby extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        play = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -44,18 +44,20 @@ public class Lobby extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 0));
-        jButton2.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("PLAY");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        play.setBackground(new java.awt.Color(255, 255, 0));
+        play.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        play.setForeground(new java.awt.Color(0, 0, 0));
+        play.setText("PLAY");
+        play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                playActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+        getContentPane().add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
 
+        jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("INFO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,9 +82,12 @@ public class Lobby extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        MainMenu next=new MainMenu();
+        next.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_playActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -98,9 +103,9 @@ public class Lobby extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton play;
     // End of variables declaration//GEN-END:variables
 }

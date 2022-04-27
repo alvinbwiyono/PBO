@@ -124,7 +124,7 @@ public class Lobby extends javax.swing.JFrame {
         ImageIcon img=new ImageIcon("Pokeball.png");
         String[] options = new String[2];
         options[0] = "Back";
-        options[1] = "Exit";
+        options[1] = "Exit"; 
         int jawab = JOptionPane.showOptionDialog(this, 
                    "Do You Want to Exit?", 
                     "Exit",
@@ -135,10 +135,12 @@ public class Lobby extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Thank You For Playing!");
             System.exit(0);
         }
+        
     }//GEN-LAST:event_ExitActionPerformed
 
     private void play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_play1ActionPerformed
 
     private void play2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play2ActionPerformed

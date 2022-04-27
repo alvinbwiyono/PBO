@@ -1,6 +1,8 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -38,7 +40,7 @@ public class Lobby extends javax.swing.JFrame {
 
         play = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Exit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         play1 = new javax.swing.JButton();
         play2 = new javax.swing.JButton();
@@ -68,14 +70,14 @@ public class Lobby extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 90, 30));
 
-        jButton4.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        jButton4.setText("EXIT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Exit.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        Exit.setText("EXIT");
+        Exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 90, 30));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 90, 30));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
@@ -117,9 +119,23 @@ public class Lobby extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        ImageIcon img=new ImageIcon("Pokeball.png");
+        String[] options = new String[2];
+        options[0] = "Back";
+        options[1] = "Exit";
+        int jawab = JOptionPane.showOptionDialog(this, 
+                   "Do You Want to Exit?", 
+                    "Exit",
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.QUESTION_MESSAGE,img, options, null);
+    
+        if(jawab == JOptionPane.NO_OPTION){
+            JOptionPane.showMessageDialog(this, "Thank You For Playing!");
+            System.exit(0);
+        }
+    }//GEN-LAST:event_ExitActionPerformed
 
     private void play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play1ActionPerformed
         // TODO add your handling code here:
@@ -135,8 +151,8 @@ public class Lobby extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Exit;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton play;
     private javax.swing.JButton play1;

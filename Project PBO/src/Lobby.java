@@ -1,8 +1,17 @@
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTextPane;
+import javax.swing.UIManager;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -23,7 +32,8 @@ public class Lobby extends javax.swing.JFrame {
         this.setTitle("VSPokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-
+        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
@@ -40,10 +50,9 @@ public class Lobby extends javax.swing.JFrame {
 
         play = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        Exit = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        play1 = new javax.swing.JButton();
-        play2 = new javax.swing.JButton();
+        Setting = new javax.swing.JButton();
+        Exit1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,7 +66,7 @@ public class Lobby extends javax.swing.JFrame {
                 playActionPerformed(evt);
             }
         });
-        getContentPane().add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+        getContentPane().add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 90, 30));
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
@@ -68,42 +77,28 @@ public class Lobby extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 90, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 90, 30));
 
-        Exit.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        Exit.setText("EXIT");
-        Exit.addActionListener(new java.awt.event.ActionListener() {
+        Setting.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        Setting.setText("SETTINGS");
+        Setting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
+                SettingActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 90, 30));
+        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 110, 30));
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
-
-        play1.setBackground(new java.awt.Color(255, 255, 0));
-        play1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        play1.setForeground(new java.awt.Color(0, 0, 0));
-        play1.setText("PLAY");
-        play1.addActionListener(new java.awt.event.ActionListener() {
+        Exit1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
+        Exit1.setText("EXIT");
+        Exit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                play1ActionPerformed(evt);
+                Exit1ActionPerformed(evt);
             }
         });
-        getContentPane().add(play1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+        getContentPane().add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 90, 30));
 
-        play2.setBackground(new java.awt.Color(255, 255, 0));
-        play2.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        play2.setForeground(new java.awt.Color(0, 0, 0));
-        play2.setText("PLAY");
-        play2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                play2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(play2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 90, 30));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,14 +109,36 @@ public class Lobby extends javax.swing.JFrame {
         next.setVisible(true);
         dispose();
     }//GEN-LAST:event_playActionPerformed
-
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        JTextPane jtp = new JTextPane();
+        Document doc = jtp.getDocument();
+        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        try {
+            doc.insertString(doc.getLength(), "Created By : \n"
+                    + "221116935 - ALDI AFENDIYANTO\n"
+                    + "221116936 - ALVIN BERNARD WIYONO\n"
+                    + "221116947 - DARRELL FIKO ALEXANDER\n" 
+                    + "221116958 - GEOVANN CHANDRA", new SimpleAttributeSet());
+        } catch (BadLocationException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//        jtp.setSize(new Dimension(480, 50));
+//        jtp.setPreferredSize(new Dimension(480, jtp.getPreferredSize().height));
+        JOptionPane.showMessageDialog(null,jtp, "INFO",JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+    private void SettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingActionPerformed
         // TODO add your handling code here:
-        ImageIcon img=new ImageIcon("Pokeball.png");
+        
+        
+    }//GEN-LAST:event_SettingActionPerformed
+
+    private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
+        // TODO add your handling code here:
+        ImageIcon img=new ImageIcon("src/Pokeball.png");
         String[] options = new String[2];
         options[0] = "Back";
         options[1] = "Exit"; 
@@ -135,17 +152,7 @@ public class Lobby extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Thank You For Playing!");
             System.exit(0);
         }
-        
-    }//GEN-LAST:event_ExitActionPerformed
-
-    private void play1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_play1ActionPerformed
-
-    private void play2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_play2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_play2ActionPerformed
+    }//GEN-LAST:event_Exit1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,11 +160,10 @@ public class Lobby extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Exit;
+    private javax.swing.JButton Exit1;
+    private javax.swing.JButton Setting;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton play;
-    private javax.swing.JButton play1;
-    private javax.swing.JButton play2;
     // End of variables declaration//GEN-END:variables
 }

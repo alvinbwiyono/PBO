@@ -67,7 +67,7 @@ public class Lobby extends javax.swing.JFrame {
                 playActionPerformed(evt);
             }
         });
-        getContentPane().add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 90, 30));
+        getContentPane().add(play, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 90, 30));
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
@@ -79,17 +79,23 @@ public class Lobby extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 90, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 90, 30));
 
         Setting.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        Setting.setText("SETTINGS");
+        Setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        Setting.setToolTipText("");
+        Setting.setAutoscrolls(true);
+        Setting.setBorder(null);
+        Setting.setBorderPainted(false);
+        Setting.setContentAreaFilled(false);
         Setting.setFocusPainted(false);
+        Setting.setOpaque(false);
         Setting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SettingActionPerformed(evt);
             }
         });
-        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 110, 30));
+        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 60, 50));
 
         Exit1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         Exit1.setText("EXIT");
@@ -99,7 +105,7 @@ public class Lobby extends javax.swing.JFrame {
                 Exit1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 90, 30));
+        getContentPane().add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -136,7 +142,6 @@ public class Lobby extends javax.swing.JFrame {
 
     private void SettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingActionPerformed
         // TODO add your handling code here:
-        
         
     }//GEN-LAST:event_SettingActionPerformed
 

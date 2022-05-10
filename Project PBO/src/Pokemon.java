@@ -1,5 +1,6 @@
 
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,11 +13,13 @@ import java.util.Random;
  */
 public abstract class Pokemon{
     protected int maxHealth,currHealth,damage;
+    protected ImageIcon gambar;
 
-    public Pokemon(int maxHealth, int damage) {
+    public Pokemon(int maxHealth, int damage, ImageIcon gambar) {
         this.maxHealth = maxHealth;
         this.currHealth = maxHealth;
         this.damage = damage;
+        this.gambar=gambar;
     }
 
     public int getMaxHealth() {
@@ -48,6 +51,14 @@ public abstract class Pokemon{
     public int Attack(){
         Random rand=new Random();
         return rand.nextInt(damage)+1;
+    }
+
+    public ImageIcon getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(ImageIcon gambar) {
+        this.gambar = gambar;
     }
     
 }

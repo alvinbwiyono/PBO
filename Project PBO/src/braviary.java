@@ -1,3 +1,6 @@
+
+import javax.swing.ImageIcon;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -9,8 +12,8 @@
  */
 public class braviary extends Pokemon implements Ulti{
     
-    public braviary(int maxHealth, int damage) {
-        super(maxHealth, damage);
+    public braviary(int maxHealth, int damage,  ImageIcon gambar) {
+        super(maxHealth, damage, gambar);
     }
 
     @Override

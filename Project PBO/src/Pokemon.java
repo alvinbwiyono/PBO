@@ -18,6 +18,30 @@ public abstract class Pokemon{
         this.currHealth = maxHealth;
         this.damage = damage;
     }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(int maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
+    public int getCurrHealth() {
+        return currHealth;
+    }
+
+    public void setCurrHealth(int currHealth) {
+        this.currHealth = currHealth;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
     
     public abstract int skill();
 

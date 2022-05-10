@@ -37,6 +37,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="PLAY"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="playActionPerformed"/>
@@ -59,6 +60,7 @@
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="INFO"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -75,6 +77,7 @@
           <Font name="Square721 Cn BT" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SETTINGS"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SettingActionPerformed"/>
@@ -91,6 +94,7 @@
           <Font name="Square721 Cn BT" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="EXIT"/>
+        <Property name="focusPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Exit1ActionPerformed"/>

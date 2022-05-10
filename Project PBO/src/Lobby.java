@@ -61,6 +61,7 @@ public class Lobby extends javax.swing.JFrame {
         play.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         play.setForeground(new java.awt.Color(0, 0, 0));
         play.setText("PLAY");
+        play.setFocusPainted(false);
         play.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 playActionPerformed(evt);
@@ -72,6 +73,7 @@ public class Lobby extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("INFO");
+        jButton3.setFocusPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -81,6 +83,7 @@ public class Lobby extends javax.swing.JFrame {
 
         Setting.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         Setting.setText("SETTINGS");
+        Setting.setFocusPainted(false);
         Setting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SettingActionPerformed(evt);
@@ -90,6 +93,7 @@ public class Lobby extends javax.swing.JFrame {
 
         Exit1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         Exit1.setText("EXIT");
+        Exit1.setFocusPainted(false);
         Exit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Exit1ActionPerformed(evt);
@@ -140,7 +144,7 @@ public class Lobby extends javax.swing.JFrame {
         // TODO add your handling code here:
         ImageIcon img=new ImageIcon("src/Pokeball.png");
         String[] options = new String[2];
-        options[0] = "Back";
+        options[0] = "Cancel";
         options[1] = "Exit"; 
         int jawab = JOptionPane.showOptionDialog(this, 
                    "Do You Want to Exit?", 

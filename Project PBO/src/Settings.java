@@ -21,7 +21,7 @@ public class Settings extends javax.swing.JFrame {
         
         initComponents();
         this.setTitle("Settings");
-        this.setSize(500,300);
+        this.setSize(513,335);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
         ImageIcon img = new ImageIcon("src/Pokeball.png");
         this.setIconImage(img.getImage());
@@ -46,6 +46,7 @@ public class Settings extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,9 +55,10 @@ public class Settings extends javax.swing.JFrame {
         jButton1.setFocusPainted(false);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, 39));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Select Songs");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 51));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 150, 51));
 
         jButton4.setText("Song 2");
         jButton4.setFocusPainted(false);
@@ -77,7 +79,10 @@ public class Settings extends javax.swing.JFrame {
         jButton3.setContentAreaFilled(false);
         jButton3.setFocusPainted(false);
         jButton3.setOpaque(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsbackground.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,5 +102,6 @@ public class Settings extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

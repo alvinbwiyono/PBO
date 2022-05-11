@@ -45,7 +45,7 @@ public class Settings extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,7 +56,7 @@ public class Settings extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Select Songs");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 90, 51));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 100, 51));
 
         jButton4.setText("Song 2");
         jButton4.setFocusPainted(false);
@@ -71,16 +71,13 @@ public class Settings extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, 39));
 
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 60, 50));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mute.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.setOpaque(false);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -89,10 +86,6 @@ public class Settings extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -100,7 +93,7 @@ public class Settings extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;

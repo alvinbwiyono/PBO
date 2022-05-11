@@ -43,7 +43,7 @@ public class Lobby extends javax.swing.JFrame {
     public Lobby(){
         f = new File("1");
         initComponents();
-        this.setTitle("VSPokemon");
+        this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
         ImageIcon img = new ImageIcon("src/Pokeball.png");

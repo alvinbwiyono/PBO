@@ -71,7 +71,6 @@ public class Settings extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, 39));
 
-        jButton2.setIcon(new javax.swing.ImageIcon("D:\\GitHub\\PBO\\Project PBO\\src\\mute.png")); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);

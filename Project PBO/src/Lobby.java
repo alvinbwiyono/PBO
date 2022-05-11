@@ -125,20 +125,19 @@ public class Lobby extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 90, 30));
 
         Setting.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        Setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settings.png"))); // NOI18N
+        Setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sett.png"))); // NOI18N
         Setting.setToolTipText("");
         Setting.setAutoscrolls(true);
         Setting.setBorder(null);
         Setting.setBorderPainted(false);
         Setting.setContentAreaFilled(false);
         Setting.setFocusPainted(false);
-        Setting.setOpaque(false);
         Setting.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SettingActionPerformed(evt);
             }
         });
-        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 60, 50));
+        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 60, 50));
 
         Exit1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         Exit1.setText("EXIT");

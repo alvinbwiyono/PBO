@@ -2,8 +2,17 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
@@ -27,7 +36,12 @@ public class Lobby extends javax.swing.JFrame {
     /**
      * Creates new form Lobby
      */
-    public Lobby() {
+    File f;
+    AudioInputStream audioIn=null;
+    Clip clip = null;
+    
+    public Lobby(){
+        f = new File("1");
         initComponents();
         this.setTitle("VSPokemon");
         this.setSize(813,535);
@@ -39,6 +53,35 @@ public class Lobby extends javax.swing.JFrame {
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
+        
+    try {
+            audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
+        } catch (FileNotFoundException ex){
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            clip.open(audioIn);
+        } catch (NullPointerException ex){ 
+             
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    clip.start();
+    clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
     /**
@@ -142,7 +185,7 @@ public class Lobby extends javax.swing.JFrame {
 
     private void SettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingActionPerformed
         // TODO add your handling code here:
-        
+        new Settings().setVisible(true);
     }//GEN-LAST:event_SettingActionPerformed
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed

@@ -38,6 +38,7 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Song 1"/>
         <Property name="focusPainted" type="boolean" value="false"/>
+        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="L1ActionPerformed"/>

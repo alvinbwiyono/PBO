@@ -62,6 +62,7 @@ public class Settings extends javax.swing.JFrame {
 
         L1.setText("Song 1");
         L1.setFocusPainted(false);
+        L1.setFocusable(false);
         L1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 L1ActionPerformed(evt);

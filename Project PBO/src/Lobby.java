@@ -129,6 +129,7 @@ public class Lobby extends javax.swing.JFrame {
         Setting = new javax.swing.JButton();
         Exit1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -170,7 +171,7 @@ public class Lobby extends javax.swing.JFrame {
                 SettingActionPerformed(evt);
             }
         });
-        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 60, 50));
+        getContentPane().add(Setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 60, 50));
 
         Exit1.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
         Exit1.setText("EXIT");
@@ -182,8 +183,11 @@ public class Lobby extends javax.swing.JFrame {
         });
         getContentPane().add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 90, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon-center (1).gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -20, 870, 540));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,6 +252,7 @@ public class Lobby extends javax.swing.JFrame {
     private javax.swing.JButton Setting;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public javax.swing.JButton play;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,9 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 
 /*
@@ -17,7 +20,12 @@ public class Settings extends javax.swing.JFrame {
     /**
      * Creates new form Settings
      */
+    File f;
+    AudioInputStream audioIn=null;
+    Clip clip = null;
+    
     public Settings() {
+        
         
         initComponents();
         this.setTitle("Settings");

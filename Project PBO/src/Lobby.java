@@ -41,7 +41,7 @@ public class Lobby extends javax.swing.JFrame {
     Clip clip = null;
     
     public Lobby(){
-        f = new File("1");
+        f = new File("src/sound/audio/Lagu 1.wav");
         initComponents();
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);

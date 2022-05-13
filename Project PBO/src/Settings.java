@@ -21,10 +21,8 @@ public class Settings extends javax.swing.JFrame {
      * Creates new form Settings
      */
     File f;
-    AudioInputStream audioIn=null;
-    Clip clip = null;
     
-    public Settings() {
+    public Settings(File file) {
         
         
         initComponents();
@@ -50,11 +48,11 @@ public class Settings extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        L1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        L2 = new javax.swing.JButton();
+        L3 = new javax.swing.JButton();
+        LMute = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsbackground.png"))); // NOI18N
@@ -62,34 +60,49 @@ public class Settings extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Song 1");
-        jButton1.setFocusPainted(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, 39));
+        L1.setText("Song 1");
+        L1.setFocusPainted(false);
+        L1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                L1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(L1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, 39));
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Select Songs");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 180, 51));
 
-        jButton4.setText("Song 2");
-        jButton4.setFocusPainted(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, 39));
-
-        jButton5.setText("Song 3");
-        jButton5.setFocusPainted(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        L2.setText("Song 2");
+        L2.setFocusPainted(false);
+        L2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                L2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, 39));
+        getContentPane().add(L2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, 39));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmute.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setFocusPainted(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 60, 60));
+        L3.setText("Song 3");
+        L3.setFocusPainted(false);
+        L3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                L3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, 39));
+
+        LMute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmute.png"))); // NOI18N
+        LMute.setBorder(null);
+        LMute.setBorderPainted(false);
+        LMute.setContentAreaFilled(false);
+        LMute.setFocusPainted(false);
+        LMute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LMuteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 60, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsbackground.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
@@ -97,9 +110,29 @@ public class Settings extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void L3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        f=new File("src/sound/audio/Lagu 3.wav");
+        Lobby.gantiLagu(f);
+    }//GEN-LAST:event_L3ActionPerformed
+
+    private void L1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L1ActionPerformed
+        // TODO add your handling code here:
+        f=new File("src/sound/audio/Lagu 1.wav");
+        Lobby.gantiLagu(f);
+    }//GEN-LAST:event_L1ActionPerformed
+
+    private void L2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L2ActionPerformed
+        // TODO add your handling code here:
+        f=new File("src/sound/audio/Lagu 2.wav");
+        Lobby.gantiLagu(f);
+    }//GEN-LAST:event_L2ActionPerformed
+
+    private void LMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LMuteActionPerformed
+        // TODO add your handling code here:
+        f=new File("src/sound/audio/1.wav");
+        Lobby.gantiLagu(f);
+    }//GEN-LAST:event_LMuteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,10 +140,10 @@ public class Settings extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton L1;
+    private javax.swing.JButton L2;
+    private javax.swing.JButton L3;
+    private javax.swing.JButton LMute;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

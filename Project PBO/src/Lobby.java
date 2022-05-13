@@ -116,6 +116,8 @@ public class Lobby extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
         }
+        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        volume.setValue(-5f);
     clip.start();
     clip.loop(Clip.LOOP_CONTINUOUSLY);
    }

@@ -84,7 +84,7 @@ public class Lobby extends javax.swing.JFrame {
     clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
 
-   public static void gantiLagu(File f1){
+    public static void gantiLagu(File f1){
         try {
             clip.stop();
             audioIn = AudioSystem.getAudioInputStream(f1.toURI().toURL());

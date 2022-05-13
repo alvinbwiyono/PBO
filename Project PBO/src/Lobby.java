@@ -83,7 +83,7 @@ public class Lobby extends javax.swing.JFrame {
             Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
         }
         FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        volume.setValue(-5f);
+        volume.setValue(-20f);
     clip.start();
     clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
@@ -117,7 +117,7 @@ public class Lobby extends javax.swing.JFrame {
             Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
         }
         FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        volume.setValue(-5f);
+        volume.setValue(-20f);
     clip.start();
     clip.loop(Clip.LOOP_CONTINUOUSLY);
    }

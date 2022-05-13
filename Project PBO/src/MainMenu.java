@@ -1,6 +1,7 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -18,15 +19,16 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
-        this.setTitle("VSPokemon");
+        this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-
+        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
 
-        this.setLocation(x,y);
+        this.setLocation(x, y);
     }
 
     /**

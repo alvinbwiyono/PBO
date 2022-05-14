@@ -118,7 +118,7 @@ public class Info extends javax.swing.JFrame {
                 pikachuActionPerformed(evt);
             }
         });
-        getContentPane().add(pikachu, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 100, 100));
+        getContentPane().add(pikachu, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 100, 100));
 
         arctozolt.setBackground(new java.awt.Color(204, 204, 204));
         arctozolt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
@@ -157,7 +157,7 @@ public class Info extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PIKACHU");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -204,10 +204,11 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(skill, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
 
         ulti.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ulti.setForeground(new java.awt.Color(255, 255, 255));
         ulti.setText("ULTI : ");
         getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg6.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg9.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

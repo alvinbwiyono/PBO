@@ -11,9 +11,9 @@ import javax.swing.ImageIcon;
  * @author Aldiaafn
  */
 public class braviary extends Pokemon implements Ulti{
-    
-    public braviary(int maxHealth, int damage,  ImageIcon gambar) {
-        super(maxHealth, damage, gambar);
+    //ATTACKER (Basic attack)
+    public braviary(ImageIcon gambar) {
+        super(90, 6, gambar);
     }
 
     @Override

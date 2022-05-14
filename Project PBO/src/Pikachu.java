@@ -8,12 +8,12 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Aldiaafn
+ * @author Fiko
  */
-    public class articuno extends Pokemon implements Ulti{
-    //HEALER
-    public articuno(ImageIcon gambar) {
-        super(110, 2, gambar);
+public class Pikachu extends Pokemon implements Ulti{
+    //MAGICAL
+    public Pikachu(ImageIcon gambar) {
+        super(90, 2, gambar);
     }
 
     @Override
@@ -25,6 +25,4 @@ import javax.swing.ImageIcon;
     public int ult() {
         return 0;
     }
-        
-        
-   }
+}

@@ -24,11 +24,11 @@ public class Info extends javax.swing.JFrame {
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
         ImageIcon img = new ImageIcon("src/Pokeball.png");
         this.setIconImage(img.getImage());
-        // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
+        pokeball.setVisible(true);
         arcticunoImage.setVisible(false);
         arctozoltImage.setVisible(false);
         blastoiseImage.setVisible(false);
@@ -62,6 +62,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage = new javax.swing.JLabel();
         braviaryImage = new javax.swing.JLabel();
         pikachuImage = new javax.swing.JLabel();
+        pokeball = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -148,7 +149,7 @@ public class Info extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("POKEMON INFO");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
 
         arcticunoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
         getContentPane().add(arcticunoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
@@ -162,6 +163,9 @@ public class Info extends javax.swing.JFrame {
         pikachuImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
         getContentPane().add(pikachuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
+        pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        getContentPane().add(pokeball, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 40, 50));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
@@ -172,6 +176,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage.setVisible(false);
         braviaryImage.setVisible(false);
         pikachuImage.setVisible(false);
+        pokeball.setVisible(false);
     }//GEN-LAST:event_arctozoltActionPerformed
 
     private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
@@ -180,6 +185,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage.setVisible(false);
         braviaryImage.setVisible(false);
         pikachuImage.setVisible(false);
+        pokeball.setVisible(false);
     }//GEN-LAST:event_articunoActionPerformed
 
     private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
@@ -188,6 +194,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage.setVisible(true);
         braviaryImage.setVisible(false);
         pikachuImage.setVisible(false);
+        pokeball.setVisible(false);
     }//GEN-LAST:event_blastoiseActionPerformed
 
     private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
@@ -196,6 +203,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage.setVisible(false);
         braviaryImage.setVisible(true);
         pikachuImage.setVisible(false);
+        pokeball.setVisible(false);
     }//GEN-LAST:event_braviaryActionPerformed
 
     private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
@@ -204,6 +212,7 @@ public class Info extends javax.swing.JFrame {
         blastoiseImage.setVisible(false);
         braviaryImage.setVisible(false);
         pikachuImage.setVisible(true);
+        pokeball.setVisible(false);
     }//GEN-LAST:event_pikachuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -266,5 +275,6 @@ public class Info extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton pikachu;
     private javax.swing.JLabel pikachuImage;
+    private javax.swing.JLabel pokeball;
     // End of variables declaration//GEN-END:variables
 }

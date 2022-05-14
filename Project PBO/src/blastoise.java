@@ -11,9 +11,9 @@ import javax.swing.ImageIcon;
  * @author Aldiaafn
  */
 public class blastoise extends Pokemon implements Ulti{
-    
-    public blastoise(int maxHealth, int damage, ImageIcon gambar) {
-        super(maxHealth, damage, gambar);
+    //BUFFER
+    public blastoise(ImageIcon gambar) {
+        super(120, 3, gambar);
     }
     
     @Override

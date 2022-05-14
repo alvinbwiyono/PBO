@@ -1,6 +1,7 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 /*
@@ -17,6 +18,9 @@ public class Deck extends javax.swing.JFrame {
     /**
      * Creates new form Deck
      */
+    static Pokemon[] teams = new Pokemon[3];
+    static boolean[] poke = new boolean[3];
+    
     public Deck() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -29,6 +33,11 @@ public class Deck extends javax.swing.JFrame {
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
+        
+        for (int i = 0; i < 3; i++) {
+            teams[i] = null;
+            poke[i] = false;
+        }
     }
 
     /**
@@ -47,9 +56,9 @@ public class Deck extends javax.swing.JFrame {
         Pikachu = new javax.swing.JButton();
         Back = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
+        Poke1 = new javax.swing.JButton();
         Poke2 = new javax.swing.JButton();
         Poke3 = new javax.swing.JButton();
-        Poke1 = new javax.swing.JButton();
         Save = new javax.swing.JButton();
         Load = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
@@ -60,26 +69,51 @@ public class Deck extends javax.swing.JFrame {
         Arctozolt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
         Arctozolt.setBorderPainted(false);
         Arctozolt.setContentAreaFilled(false);
+        Arctozolt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ArctozoltActionPerformed(evt);
+            }
+        });
         getContentPane().add(Arctozolt, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, 90, 90));
 
         Articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
         Articuno.setBorderPainted(false);
         Articuno.setContentAreaFilled(false);
+        Articuno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ArticunoActionPerformed(evt);
+            }
+        });
         getContentPane().add(Articuno, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 110, 120));
 
         Blastoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
         Blastoise.setBorderPainted(false);
         Blastoise.setContentAreaFilled(false);
+        Blastoise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BlastoiseActionPerformed(evt);
+            }
+        });
         getContentPane().add(Blastoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 140, 120));
 
         Braviary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
         Braviary.setBorderPainted(false);
         Braviary.setContentAreaFilled(false);
+        Braviary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BraviaryActionPerformed(evt);
+            }
+        });
         getContentPane().add(Braviary, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 120, 120));
 
         Pikachu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
         Pikachu.setBorderPainted(false);
         Pikachu.setContentAreaFilled(false);
+        Pikachu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PikachuActionPerformed(evt);
+            }
+        });
         getContentPane().add(Pikachu, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 90, 80));
 
         Back.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -101,20 +135,35 @@ public class Deck extends javax.swing.JFrame {
         Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 189, 43));
 
+        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke1.setBorderPainted(false);
+        Poke1.setContentAreaFilled(false);
+        Poke1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Poke1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Poke1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 140, 120));
+
         Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke2.setBorderPainted(false);
         Poke2.setContentAreaFilled(false);
-        getContentPane().add(Poke2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 140, 120));
+        Poke2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Poke2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Poke2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 140, 120));
 
         Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke3.setBorderPainted(false);
         Poke3.setContentAreaFilled(false);
-        getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 140, 120));
-
-        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
-        Poke1.setBorderPainted(false);
-        Poke1.setContentAreaFilled(false);
-        getContentPane().add(Poke1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 140, 120));
+        Poke3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Poke3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 140, 120));
 
         Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +174,11 @@ public class Deck extends javax.swing.JFrame {
         getContentPane().add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, -1, -1));
 
         Load.setText("Load");
+        Load.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoadActionPerformed(evt);
+            }
+        });
         getContentPane().add(Load, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, -1, -1));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
@@ -135,6 +189,8 @@ public class Deck extends javax.swing.JFrame {
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
+        // Simpan deck untuk nantinya digunakan battle
+        
     }//GEN-LAST:event_SaveActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -143,6 +199,192 @@ public class Deck extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_BackActionPerformed
 
+    private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
+        // TODO add your handling code here:
+        // Load deck yang sebelumnya pernah di set
+        
+    }//GEN-LAST:event_LoadActionPerformed
+
+    public static int getIndex(){
+        for (int i = 0; i < 3; i++) {
+            if (poke[i] == false) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    private void BraviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BraviaryActionPerformed
+        // TODO add your handling code here:
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
+        
+        int btn = getIndex();
+        if (btn != -1) {
+            if (btn == 0) {
+                // Poke1
+                Poke1.setIcon(icon);
+            } else if (btn == 1) {
+                // Poke2
+                Poke2.setIcon(icon);
+            } else if (btn == 2) {
+                // Poke3
+                Poke3.setIcon(icon);
+            }
+            teams[btn] = new braviary();
+            poke[btn] = true;
+            Braviary.setVisible(false);
+        }
+    }//GEN-LAST:event_BraviaryActionPerformed
+
+    private void ArticunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArticunoActionPerformed
+        // TODO add your handling code here:
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
+        
+        int btn = getIndex();
+        if (btn != -1) {
+            if (btn == 0) {
+                // Poke1
+                Poke1.setIcon(icon);
+            } else if (btn == 1) {
+                // Poke2
+                Poke2.setIcon(icon);
+            } else if (btn == 2) {
+                // Poke3
+                Poke3.setIcon(icon);
+            }
+            teams[btn] = new articuno();
+            poke[btn] = true;
+            Articuno.setVisible(false);
+        }
+    }//GEN-LAST:event_ArticunoActionPerformed
+
+    private void BlastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlastoiseActionPerformed
+        // TODO add your handling code here:
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
+        
+        int btn = getIndex();
+        if (btn != -1) {
+            if (btn == 0) {
+                // Poke1
+                Poke1.setIcon(icon);
+            } else if (btn == 1) {
+                // Poke2
+                Poke2.setIcon(icon);
+            } else if (btn == 2) {
+                // Poke3
+                Poke3.setIcon(icon);
+            }
+            teams[btn] = new blastoise();
+            poke[btn] = true;
+            Blastoise.setVisible(false);
+        }
+    }//GEN-LAST:event_BlastoiseActionPerformed
+
+    private void PikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PikachuActionPerformed
+        // TODO add your handling code here:
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
+        
+        int btn = getIndex();
+        if (btn != -1) {
+            if (btn == 0) {
+                // Poke1
+                Poke1.setIcon(icon);
+            } else if (btn == 1) {
+                // Poke2
+                Poke2.setIcon(icon);
+            } else if (btn == 2) {
+                // Poke3
+                Poke3.setIcon(icon);
+            }
+            teams[btn] = new pikachu();
+            poke[btn] = true;
+            Pikachu.setVisible(false);
+        }
+    }//GEN-LAST:event_PikachuActionPerformed
+
+    private void ArctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArctozoltActionPerformed
+        // TODO add your handling code here:
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
+        
+        int btn = getIndex();
+        if (btn != -1) {
+            if (btn == 0) {
+                // Poke1
+                Poke1.setIcon(icon);
+            } else if (btn == 1) {
+                // Poke2
+                Poke2.setIcon(icon);
+            } else if (btn == 2) {
+                // Poke3
+                Poke3.setIcon(icon);
+            }
+            teams[btn] = new arctozolt();
+            poke[btn] = true;
+            Arctozolt.setVisible(false);
+        }
+    }//GEN-LAST:event_ArctozoltActionPerformed
+
+    private void Poke1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke1ActionPerformed
+        // TODO add your handling code here:
+        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        poke[0] = false;
+        
+        if (teams[0] instanceof arctozolt) {
+            Arctozolt.setVisible(true);
+        } else if (teams[0] instanceof articuno) {
+            Articuno.setVisible(true);
+        } else if (teams[0] instanceof blastoise) {
+            Blastoise.setVisible(true);
+        } else if (teams[0] instanceof braviary) {
+            Braviary.setVisible(true);
+        } else if (teams[0] instanceof pikachu) {
+            Pikachu.setVisible(true);
+        }
+        
+        teams[0] = null;
+        
+    }//GEN-LAST:event_Poke1ActionPerformed
+
+    private void Poke2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke2ActionPerformed
+        // TODO add your handling code here:
+        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        poke[1] = false;
+        
+        if (teams[1] instanceof arctozolt) {
+            Arctozolt.setVisible(true);
+        } else if (teams[1] instanceof articuno) {
+            Articuno.setVisible(true);
+        } else if (teams[1] instanceof blastoise) {
+            Blastoise.setVisible(true);
+        } else if (teams[1] instanceof braviary) {
+            Braviary.setVisible(true);
+        } else if (teams[1] instanceof pikachu) {
+            Pikachu.setVisible(true);
+        }
+        
+        teams[1] = null;
+    }//GEN-LAST:event_Poke2ActionPerformed
+
+    private void Poke3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke3ActionPerformed
+        // TODO add your handling code here:
+        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        poke[2] = false;
+        
+        if (teams[2] instanceof arctozolt) {
+            Arctozolt.setVisible(true);
+        } else if (teams[2] instanceof articuno) {
+            Articuno.setVisible(true);
+        } else if (teams[2] instanceof blastoise) {
+            Blastoise.setVisible(true);
+        } else if (teams[2] instanceof braviary) {
+            Braviary.setVisible(true);
+        } else if (teams[2] instanceof pikachu) {
+            Pikachu.setVisible(true);
+        }
+        
+        teams[2] = null;
+    }//GEN-LAST:event_Poke3ActionPerformed
+    
     /**
      * @param args the command line arguments
      */

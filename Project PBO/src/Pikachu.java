@@ -15,7 +15,9 @@ public class pikachu extends Pokemon implements Ulti{
     public pikachu(ImageIcon gambar) {
         super(90, 2, gambar);
     }
-    
+
+    public pikachu() {
+    }
 
     @Override
     public int skill() {

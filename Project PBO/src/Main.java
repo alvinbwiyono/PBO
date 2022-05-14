@@ -14,8 +14,8 @@ public class Main {
      */
     public static void main(String[] args){
         // TODO code application logic here
-//        new Lobby().setVisible(true);
-        new Menu().setVisible(true);
+        new Lobby().setVisible(true);
+//        new Menu().setVisible(true);
     }
     //hallo ini saya
 }

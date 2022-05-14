@@ -22,6 +22,9 @@ public abstract class Pokemon{
         this.gambar=gambar;
     }
 
+    public Pokemon() {
+    }
+
     public int getMaxHealth() {
         return maxHealth;
     }

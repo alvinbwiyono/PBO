@@ -16,6 +16,9 @@ public class braviary extends Pokemon implements Ulti{
         super(90, 6, gambar);
     }
 
+    public braviary() {
+    }
+
     @Override
     public int skill() {
         return 0;

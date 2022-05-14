@@ -16,6 +16,9 @@ import javax.swing.ImageIcon;
         super(110, 2, gambar);
     }
 
+    public articuno() {
+    }
+
     @Override
     public int skill() {
         return 0;

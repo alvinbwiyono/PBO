@@ -15,6 +15,9 @@ public class blastoise extends Pokemon implements Ulti{
     public blastoise(ImageIcon gambar) {
         super(120, 3, gambar);
     }
+
+    public blastoise() {
+    }
     
     @Override
     public int skill() {

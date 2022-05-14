@@ -82,14 +82,17 @@ public class Deck extends javax.swing.JFrame {
         Pikachu.setContentAreaFilled(false);
         getContentPane().add(Pikachu, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 90, 80));
 
-        Back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Back.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setText("Back");
+        Back.setBorderPainted(false);
+        Back.setContentAreaFilled(false);
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
             }
         });
-        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 40));
+        getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 40));
 
         Title.setFont(new java.awt.Font("Sitka Display", 1, 24)); // NOI18N
         Title.setForeground(new java.awt.Color(0, 51, 255));

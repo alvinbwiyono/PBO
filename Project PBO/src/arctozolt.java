@@ -16,6 +16,9 @@ public class arctozolt extends Pokemon implements Ulti{
         super(maxHealth, damage, gambar);
     }
 
+    public arctozolt() {
+    }
+
     @Override
     public int skill() {
         return 0;

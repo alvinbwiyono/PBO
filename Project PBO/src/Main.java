@@ -20,7 +20,6 @@ public class Main {
         // TODO code application logic here
 
         Lobby lobby = new Lobby();
-        
         lobby.setVisible(true);
 
     }

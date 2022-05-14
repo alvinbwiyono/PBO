@@ -84,6 +84,11 @@ public class Deck extends javax.swing.JFrame {
 
         Back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
         getContentPane().add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 40));
 
         Title.setFont(new java.awt.Font("Sitka Display", 1, 24)); // NOI18N
@@ -128,6 +133,12 @@ public class Deck extends javax.swing.JFrame {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments

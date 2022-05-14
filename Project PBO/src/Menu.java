@@ -159,7 +159,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void timActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timActionPerformed
-        // FORM PILIH TIM POKEMON
+        Deck deck = new Deck();
+        deck.setVisible(true);
+        dispose();
     }//GEN-LAST:event_timActionPerformed
 
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed

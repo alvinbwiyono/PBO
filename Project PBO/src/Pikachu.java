@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  * @author Fiko
  */
 public class Pikachu extends Pokemon implements Ulti{
-    //MAGICAL (Skill)(Poitioned)
+    //MAGICAL (Skill)(Poisoned)
     public Pikachu(ImageIcon gambar) {
         super(90, 2, gambar);
     }

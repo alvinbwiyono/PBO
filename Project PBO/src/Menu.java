@@ -70,6 +70,7 @@ public class Menu extends javax.swing.JFrame {
         tim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         tim.setText("POKEMON TIM");
         tim.setBorder(null);
+        tim.setBorderPainted(false);
         tim.setFocusPainted(false);
         tim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +81,8 @@ public class Menu extends javax.swing.JFrame {
         info.setBackground(new java.awt.Color(255, 255, 51));
         info.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         info.setText("INFO POKEMON");
-        info.setBorder(null);
+        info.setBorder(new javax.swing.border.MatteBorder(null));
+        info.setBorderPainted(false);
         info.setFocusPainted(false);
         info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +94,7 @@ public class Menu extends javax.swing.JFrame {
         battle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         battle.setText("BATLE");
         battle.setBorder(null);
+        battle.setBorderPainted(false);
         battle.setFocusPainted(false);
         battle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,10 +102,11 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        back.setBackground(new java.awt.Color(204, 204, 204));
+        back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         back.setText("BACK");
         back.setBorder(null);
+        back.setBorderPainted(false);
         back.setFocusPainted(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +116,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
 
-        arena.setBackground(new java.awt.Color(255, 255, 255));
         arena.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         arena.setText("ARENA");
+        arena.setFocusPainted(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -165,12 +169,6 @@ public class Menu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backActionPerformed
 
-    private void timActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timActionPerformed
-        Deck deck = new Deck();
-        deck.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_timActionPerformed
-
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
         Info info = new Info();
         info.setVisible(true);
@@ -180,6 +178,12 @@ public class Menu extends javax.swing.JFrame {
     private void battleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_battleActionPerformed
         // FORM BATTLE
     }//GEN-LAST:event_battleActionPerformed
+
+    private void timActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timActionPerformed
+        Deck deck = new Deck();
+        deck.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_timActionPerformed
 
     /**
      * @param args the command line arguments

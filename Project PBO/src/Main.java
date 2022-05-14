@@ -18,10 +18,10 @@ public class Main {
      */
     public static void main(String[] args){
         // TODO code application logic here
+
         Lobby lobby = new Lobby();
         
         lobby.setVisible(true);
-        
+
     }
-    //hallo ini saya
 }

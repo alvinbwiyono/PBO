@@ -1,3 +1,8 @@
+
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,6 +19,21 @@ public class Info extends javax.swing.JFrame {
      */
     public Info() {
         initComponents();
+        this.setTitle("Battle Pokemon");
+        this.setSize(813,535);
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        this.setIconImage(img.getImage());
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
+
+        this.setLocation(x, y);
+        arcticunoImage.setVisible(false);
+        arctozoltImage.setVisible(false);
+        blastoiseImage.setVisible(false);
+        braviaryImage.setVisible(false);
+        pikachuImage.setVisible(false);
     }
 
     /**
@@ -25,21 +45,172 @@ public class Info extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        articuno = new javax.swing.JButton();
+        blastoise = new javax.swing.JButton();
+        braviary = new javax.swing.JButton();
+        pikachu = new javax.swing.JButton();
+        arctozolt = new javax.swing.JButton();
+        arctozoltImage = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        arcticunoImage = new javax.swing.JLabel();
+        blastoiseImage = new javax.swing.JLabel();
+        braviaryImage = new javax.swing.JLabel();
+        pikachuImage = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        articuno.setBackground(new java.awt.Color(204, 204, 204));
+        articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
+        articuno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                articunoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(articuno, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 100, 100));
+
+        blastoise.setBackground(new java.awt.Color(204, 204, 204));
+        blastoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
+        blastoise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blastoiseActionPerformed(evt);
+            }
+        });
+        getContentPane().add(blastoise, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 100, 100));
+
+        braviary.setBackground(new java.awt.Color(204, 204, 204));
+        braviary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
+        braviary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                braviaryActionPerformed(evt);
+            }
+        });
+        getContentPane().add(braviary, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 100, 100));
+
+        pikachu.setBackground(new java.awt.Color(204, 204, 204));
+        pikachu.setForeground(new java.awt.Color(204, 204, 204));
+        pikachu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
+        pikachu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pikachuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pikachu, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 100, 100));
+
+        arctozolt.setBackground(new java.awt.Color(204, 204, 204));
+        arctozolt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
+        arctozolt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arctozoltActionPerformed(evt);
+            }
+        });
+        getContentPane().add(arctozolt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 100, 100));
+
+        arctozoltImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
+        getContentPane().add(arctozoltImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("ARCTOZOLT");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("ARCTICUNO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("BLASTOISE");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("BRAVIARY");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("PIKACHU");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("BACK");
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel6.setText("POKEMON INFO");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
+
+        arcticunoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
+        getContentPane().add(arcticunoImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
+
+        blastoiseImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
+        getContentPane().add(blastoiseImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
+
+        braviaryImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
+        getContentPane().add(braviaryImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        pikachuImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
+        getContentPane().add(pikachuImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+    private void arctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arctozoltActionPerformed
+        arcticunoImage.setVisible(false);
+        arctozoltImage.setVisible(true);
+        blastoiseImage.setVisible(false);
+        braviaryImage.setVisible(false);
+        pikachuImage.setVisible(false);
+    }//GEN-LAST:event_arctozoltActionPerformed
+
+    private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
+        arcticunoImage.setVisible(true);
+        arctozoltImage.setVisible(false);
+        blastoiseImage.setVisible(false);
+        braviaryImage.setVisible(false);
+        pikachuImage.setVisible(false);
+    }//GEN-LAST:event_articunoActionPerformed
+
+    private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
+        arcticunoImage.setVisible(false);
+        arctozoltImage.setVisible(false);
+        blastoiseImage.setVisible(true);
+        braviaryImage.setVisible(false);
+        pikachuImage.setVisible(false);
+    }//GEN-LAST:event_blastoiseActionPerformed
+
+    private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
+        arcticunoImage.setVisible(false);
+        arctozoltImage.setVisible(false);
+        blastoiseImage.setVisible(false);
+        braviaryImage.setVisible(true);
+        pikachuImage.setVisible(false);
+    }//GEN-LAST:event_braviaryActionPerformed
+
+    private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
+        arcticunoImage.setVisible(false);
+        arctozoltImage.setVisible(false);
+        blastoiseImage.setVisible(false);
+        braviaryImage.setVisible(false);
+        pikachuImage.setVisible(true);
+    }//GEN-LAST:event_pikachuActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -72,10 +243,28 @@ public class Info extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Info().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel arcticunoImage;
+    private javax.swing.JButton arctozolt;
+    private javax.swing.JLabel arctozoltImage;
+    private javax.swing.JButton articuno;
+    private javax.swing.JButton blastoise;
+    private javax.swing.JLabel blastoiseImage;
+    private javax.swing.JButton braviary;
+    private javax.swing.JLabel braviaryImage;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton pikachu;
+    private javax.swing.JLabel pikachuImage;
     // End of variables declaration//GEN-END:variables
 }

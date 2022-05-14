@@ -35,12 +35,8 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     
-    File f;
-    static AudioInputStream audioIn=null;
-    static Clip clip = null;
     
     public Menu() {
-        f = new File("src/sound/audio/Lagu 1.wav");
         initComponents();
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
@@ -52,39 +48,7 @@ public class Menu extends javax.swing.JFrame {
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
-        
-        try {
-            audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
-        } catch (FileNotFoundException ex){
-            
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedAudioFileException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try {
-            clip = AudioSystem.getClip();
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            clip.open(audioIn);
-        } catch (NullPointerException ex){ 
-             
-        } catch (LineUnavailableException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        volume.setValue(-20f);
-        clip.start();
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -171,37 +135,6 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;

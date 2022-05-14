@@ -14,6 +14,7 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -238,16 +239,26 @@ public class Lobby extends javax.swing.JFrame {
 
     private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
         // TODO add your handling code here:
-        MainMenu next=new MainMenu();
-        next.setVisible(true);
+        Menu menu = new Menu();
+        menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_playActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
+    public JButton getPlay() {
+        return play;
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public void setPlay(JButton play) {
+        this.play = play;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit1;
     private javax.swing.JButton Setting;

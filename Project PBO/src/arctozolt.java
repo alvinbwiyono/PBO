@@ -26,5 +26,5 @@ public class arctozolt extends Pokemon implements Ulti{
         return 0;
     }
     
-    
+    // mek coba push
 }

@@ -296,7 +296,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams[btn] = new pikachu();
+            teams[btn] = new Pikachu();
             poke[btn] = true;
             Pikachu.setVisible(false);
         }
@@ -337,7 +337,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (teams[0] instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (teams[0] instanceof pikachu) {
+        } else if (teams[0] instanceof Pikachu) {
             Pikachu.setVisible(true);
         }
         
@@ -358,7 +358,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (teams[1] instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (teams[1] instanceof pikachu) {
+        } else if (teams[1] instanceof Pikachu) {
             Pikachu.setVisible(true);
         }
         
@@ -378,7 +378,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (teams[2] instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (teams[2] instanceof pikachu) {
+        } else if (teams[2] instanceof Pikachu) {
             Pikachu.setVisible(true);
         }
         

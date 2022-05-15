@@ -31,6 +31,7 @@ public class Arena extends javax.swing.JFrame {
         this.setLocation(x, y);
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
         arena.setIcon(icon);
+        previous.setVisible(false);
         
 //        icon = new javax.swing.ImageIcon(getClass().getResource(deck.getTeams()[0].gambar()));
     }
@@ -124,6 +125,10 @@ public class Arena extends javax.swing.JFrame {
             pilArena--;
         }
         gambarArena();
+        if(pilArena==1){
+            previous.setVisible(false);
+        }
+        next.setVisible(true);
     }//GEN-LAST:event_previousActionPerformed
     
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -137,6 +142,10 @@ public class Arena extends javax.swing.JFrame {
             pilArena++;
         }
         gambarArena();
+        if(pilArena==3){
+            next.setVisible(false);
+        }
+        previous.setVisible(true);
     }//GEN-LAST:event_nextActionPerformed
 
     private void Poke1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke1ActionPerformed

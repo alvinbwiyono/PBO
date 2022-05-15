@@ -176,7 +176,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_infoActionPerformed
 
     private void battleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_battleActionPerformed
-        // FORM BATTLE
+        Arena battle = new Arena();
+        battle.setVisible(true);
+        dispose();
     }//GEN-LAST:event_battleActionPerformed
 
     private void timActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timActionPerformed

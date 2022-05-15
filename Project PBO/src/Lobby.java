@@ -84,7 +84,19 @@ public class Lobby extends javax.swing.JFrame {
     clip.start();
     clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
+    public Lobby(String isi){
+        initComponents();
+        this.setTitle("Battle Pokemon");
+        this.setSize(813,535);
+        Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
+        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        this.setIconImage(img.getImage());
+        // membuat titik x dan y
+        int x = layar.width / 2  - this.getSize().width / 2;
+        int y = layar.height / 2 - this.getSize().height / 2;
 
+        this.setLocation(x, y);
+    }
     public static void gantiLagu(File f1){
         try {
             clip.stop();

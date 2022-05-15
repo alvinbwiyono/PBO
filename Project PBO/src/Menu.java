@@ -164,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        Lobby lobby = new Lobby();
+        Lobby lobby = new Lobby("");
         lobby.setVisible(true);
         dispose();
     }//GEN-LAST:event_backActionPerformed

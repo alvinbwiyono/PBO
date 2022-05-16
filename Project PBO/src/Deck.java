@@ -257,6 +257,7 @@ public class Deck extends javax.swing.JFrame {
                 } else if (i == 2) {
                     Poke3.setIcon(temp.getGambar());
                 }
+                
             }
         }
     }//GEN-LAST:event_LoadActionPerformed

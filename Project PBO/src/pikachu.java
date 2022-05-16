@@ -17,6 +17,7 @@ public class pikachu extends Pokemon implements Ulti{
     }
 
     public pikachu() {
+        // test
     }
 
     @Override

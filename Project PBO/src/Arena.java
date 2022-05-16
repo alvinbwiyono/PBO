@@ -33,7 +33,16 @@ public class Arena extends javax.swing.JFrame {
         arena.setIcon(icon);
         previous.setVisible(false);
         
-//        icon = new javax.swing.ImageIcon(getClass().getResource(deck.getTeams()[0].gambar()));
+        for (int i = 0; i < Lobby.teams.size(); i++) {
+            Pokemon poke = Lobby.teams.get(i);
+            if(i==0){
+                Poke1.setIcon(poke.getGambar());
+            }else if(i==1){
+                Poke2.setIcon(poke.getGambar());
+            }else if(i==2){
+                Poke3.setIcon(poke.getGambar());
+            }
+        }
     }
 
     /**

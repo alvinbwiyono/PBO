@@ -169,6 +169,18 @@ public class Arena extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Poke3ActionPerformed
     
+    private Icon bgArena(){
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+        if(pilArena==1){
+            icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+        }else if(pilArena==2){
+            icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
+        }else if(pilArena==3){
+            icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
+        }
+        return icon;
+    }
+    
     private void gambarArena(){
         if(pilArena==1){
             Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));

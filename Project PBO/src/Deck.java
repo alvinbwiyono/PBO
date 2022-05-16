@@ -190,19 +190,21 @@ public class Deck extends javax.swing.JFrame {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
         // Simpan deck untuk nantinya digunakan battle
-        Lobby.teams.clear();
-        for (int i = 0; i < 3; i++) {
-            Pokemon temp = teams.get(i);
-            if (temp instanceof arctozolt) {
-                Lobby.teams.add(new arctozolt(temp.getGambar()));
-            } else if (temp instanceof articuno) {
-                Lobby.teams.add(new articuno(temp.getGambar()));
-            } else if (temp instanceof blastoise) {
-                Lobby.teams.add(new blastoise(temp.getGambar()));
-            } else if (temp instanceof braviary) {
-                Lobby.teams.add(new braviary(temp.getGambar()));
-            } else if (temp instanceof pikachu) {
-                Lobby.teams.add(new pikachu(temp.getGambar()));
+        if (teams.size() == 3) {
+            Lobby.teams.clear();
+            for (int i = 0; i < 3; i++) {
+                Pokemon temp = teams.get(i);
+                if (temp instanceof arctozolt) {
+                    Lobby.teams.add(new arctozolt(temp.getGambar()));
+                } else if (temp instanceof articuno) {
+                    Lobby.teams.add(new articuno(temp.getGambar()));
+                } else if (temp instanceof blastoise) {
+                    Lobby.teams.add(new blastoise(temp.getGambar()));
+                } else if (temp instanceof braviary) {
+                    Lobby.teams.add(new braviary(temp.getGambar()));
+                } else if (temp instanceof pikachu) {
+                    Lobby.teams.add(new pikachu(temp.getGambar()));
+                }
             }
         }
     }//GEN-LAST:event_SaveActionPerformed
@@ -257,7 +259,7 @@ public class Deck extends javax.swing.JFrame {
                 } else if (i == 2) {
                     Poke3.setIcon(temp.getGambar());
                 }
-                
+
             }
         }
     }//GEN-LAST:event_LoadActionPerformed

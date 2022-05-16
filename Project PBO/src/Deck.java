@@ -1,6 +1,12 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -207,6 +213,21 @@ public class Deck extends javax.swing.JFrame {
                 }
             }
         }
+        
+        //Masih salah
+//       Save sf = new Save(teams);
+//       try {
+//           FileOutputStream fos = new FileOutputStream("save.txt");
+//           ObjectOutputStream oos = new ObjectOutputStream(fos);
+//
+//           oos.writeObject(sf);
+//           oos.close();
+//           fos.close();
+//           System.out.println("Data Saved!");
+//
+//       } catch (Exception e) {
+//           System.out.println("There's Problem on Save!" + e);
+//       }
     }//GEN-LAST:event_SaveActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -217,6 +238,23 @@ public class Deck extends javax.swing.JFrame {
 
     private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
         // TODO add your handling code here:
+        //Masih salah
+//        File file = new File("save.txt");
+//        if (file.exists()){
+//            try {
+//                FileInputStream fis = new FileInputStream("save.txt");
+//                ObjectInputStream ois = new ObjectInputStream(fis);
+//                Save save = (Save) ois.readObject();
+//                teams = save.tim;
+//                ois.close();
+//                fis.close();
+//                System.out.println("Sukses load data!");
+//            } catch (IOException e){
+//                System.out.println("There's Problem on load!" + e);
+//            } catch (ClassNotFoundException ex){
+//                System.out.println("Class Not Found!");
+//            }
+//        }
         // Load deck yang sebelumnya pernah di set
         if (Lobby.teams.size() == 3) {
             // Reset Visual

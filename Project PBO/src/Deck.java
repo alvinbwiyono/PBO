@@ -219,7 +219,19 @@ public class Deck extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Load deck yang sebelumnya pernah di set
         if (Lobby.teams.size() == 3) {
+            // Reset Visual
+            Arctozolt.setVisible(true);
+            Articuno.setVisible(true);
+            Blastoise.setVisible(true);
+            Braviary.setVisible(true);
+            Pikachu.setVisible(true);
+            
+            Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+            Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+            Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
             this.teams.clear();
+            
+            // Load
             for (int i = 0; i < 3; i++) {
                 Pokemon temp = Lobby.teams.get(i);
                 if (temp instanceof arctozolt) {
@@ -234,32 +246,35 @@ public class Deck extends javax.swing.JFrame {
                     this.teams.add(new pikachu(temp.getGambar()));
                 }
             }
-        }
-        // Update Visual
-        if (teams.size() == 3) {
-            for (int i = 0; i < 3; i++) {
-                Pokemon temp = teams.get(i);
-                if (temp instanceof arctozolt) {
-                    Arctozolt.setVisible(false);
-                } else if (temp instanceof articuno) {
-                    Articuno.setVisible(false);
-                } else if (temp instanceof blastoise) {
-                    Blastoise.setVisible(false);
-                } else if (temp instanceof braviary) {
-                    Braviary.setVisible(false);
-                } else if (temp instanceof pikachu) {
-                    Pikachu.setVisible(false);
-                }
+            // Update Visual
+            if (teams.size() == 3) {
+                for (int i = 0; i < 3; i++) {
+                    Pokemon temp = teams.get(i);
+                    if (temp instanceof arctozolt) {
+                        Arctozolt.setVisible(false);
+                    } else if (temp instanceof articuno) {
+                        Articuno.setVisible(false);
+                    } else if (temp instanceof blastoise) {
+                        Blastoise.setVisible(false);
+                    } else if (temp instanceof braviary) {
+                        Braviary.setVisible(false);
+                    } else if (temp instanceof pikachu) {
+                        Pikachu.setVisible(false);
+                    }
 
-                // Team
-                if (i == 0) {
-                    Poke1.setIcon(temp.getGambar());
-                } else if (i == 1) {
-                    Poke2.setIcon(temp.getGambar());
-                } else if (i == 2) {
-                    Poke3.setIcon(temp.getGambar());
-                }
+                    // Team
+                    if (i == 0) {
+                        Poke1.setIcon(temp.getGambar());
+                        poke[0] = true;
+                    } else if (i == 1) {
+                        Poke2.setIcon(temp.getGambar());
+                        poke[1] = true;
+                    } else if (i == 2) {
+                        Poke3.setIcon(temp.getGambar());
+                        poke[2] = true;
+                    }
 
+                }
             }
         }
     }//GEN-LAST:event_LoadActionPerformed

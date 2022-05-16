@@ -12,8 +12,9 @@ import javax.swing.ImageIcon;
  */
 public class arctozolt extends Pokemon implements Ulti{
     
-    public arctozolt(int maxHealth, int damage, ImageIcon gambar) {
-        super(maxHealth, damage, gambar);
+    public arctozolt(ImageIcon gambar) {
+        super(0,0,gambar);
+        // 0,0 Sementara mek buat ga error ae
     }
 
     public arctozolt() {

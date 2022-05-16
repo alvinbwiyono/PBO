@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
@@ -38,6 +39,7 @@ public class Lobby extends javax.swing.JFrame {
     File f;
     static AudioInputStream audioIn=null;
     static Clip clip = null;
+    static ArrayList<Pokemon> teams = new ArrayList<>();
     
     public Lobby(){
         f = new File("src/sound/audio/Lagu 1.wav");

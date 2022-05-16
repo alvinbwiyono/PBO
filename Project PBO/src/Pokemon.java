@@ -15,11 +15,10 @@ public abstract class Pokemon{
     protected int maxHealth,currHealth,damage;
     protected ImageIcon gambar;
 
-    public Pokemon(int maxHealth, int damage, ImageIcon gambar) {
+    public Pokemon(int maxHealth, int damage) {
         this.maxHealth = maxHealth;
         this.currHealth = maxHealth;
         this.damage = damage;
-        this.gambar=gambar;
     }
 
     public Pokemon() {

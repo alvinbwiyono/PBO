@@ -1,6 +1,3 @@
-
-import javax.swing.ImageIcon;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -12,11 +9,9 @@ import javax.swing.ImageIcon;
  */
 public class braviary extends Pokemon implements Ulti{
     //ATTACKER (Basic attack)
-    public braviary(ImageIcon gambar) {
-        super(90, 6, gambar);
-    }
-
     public braviary() {
+        super(90, 6);
+        gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
     }
 
     @Override

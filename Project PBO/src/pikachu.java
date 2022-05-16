@@ -12,12 +12,9 @@ import javax.swing.ImageIcon;
  */
 public class pikachu extends Pokemon implements Ulti{
     //MAGICAL (Skill)(Poisoned)
-    public pikachu(ImageIcon gambar) {
-        super(90, 2, gambar);
-    }
-
     public pikachu() {
-        // test
+        super(90, 2);
+        gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
     }
 
     @Override

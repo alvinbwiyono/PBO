@@ -12,11 +12,9 @@ import javax.swing.ImageIcon;
  */
 public class blastoise extends Pokemon implements Ulti{
     //BUFFER
-    public blastoise(ImageIcon gambar) {
-        super(120, 3, gambar);
-    }
-
     public blastoise() {
+        super(120, 3);
+        gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
     }
     
     @Override

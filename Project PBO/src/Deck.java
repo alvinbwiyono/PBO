@@ -195,15 +195,15 @@ public class Deck extends javax.swing.JFrame {
             for (int i = 0; i < 3; i++) {
                 Pokemon temp = teams.get(i);
                 if (temp instanceof arctozolt) {
-                    Lobby.teams.add(new arctozolt(temp.getGambar()));
+                    Lobby.teams.add(new arctozolt());
                 } else if (temp instanceof articuno) {
-                    Lobby.teams.add(new articuno(temp.getGambar()));
+                    Lobby.teams.add(new articuno());
                 } else if (temp instanceof blastoise) {
-                    Lobby.teams.add(new blastoise(temp.getGambar()));
+                    Lobby.teams.add(new blastoise());
                 } else if (temp instanceof braviary) {
-                    Lobby.teams.add(new braviary(temp.getGambar()));
+                    Lobby.teams.add(new braviary());
                 } else if (temp instanceof pikachu) {
-                    Lobby.teams.add(new pikachu(temp.getGambar()));
+                    Lobby.teams.add(new pikachu());
                 }
             }
         }
@@ -235,15 +235,15 @@ public class Deck extends javax.swing.JFrame {
             for (int i = 0; i < 3; i++) {
                 Pokemon temp = Lobby.teams.get(i);
                 if (temp instanceof arctozolt) {
-                    this.teams.add(new arctozolt(temp.getGambar()));
+                    this.teams.add(new arctozolt());
                 } else if (temp instanceof articuno) {
-                    this.teams.add(new articuno(temp.getGambar()));
+                    this.teams.add(new articuno());
                 } else if (temp instanceof blastoise) {
-                    this.teams.add(new blastoise(temp.getGambar()));
+                    this.teams.add(new blastoise());
                 } else if (temp instanceof braviary) {
-                    this.teams.add(new braviary(temp.getGambar()));
+                    this.teams.add(new braviary());
                 } else if (temp instanceof pikachu) {
-                    this.teams.add(new pikachu(temp.getGambar()));
+                    this.teams.add(new pikachu());
                 }
             }
             // Update Visual
@@ -304,7 +304,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new braviary(icon));
+            teams.add(new braviary());
             poke[btn] = true;
             Braviary.setVisible(false);
         }
@@ -326,7 +326,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new articuno(icon));
+            teams.add(new articuno());
             poke[btn] = true;
             Articuno.setVisible(false);
         }
@@ -348,7 +348,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new blastoise(icon));
+            teams.add(new blastoise());
             poke[btn] = true;
             Blastoise.setVisible(false);
         }
@@ -370,7 +370,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new pikachu(icon));
+            teams.add(new pikachu());
             poke[btn] = true;
             Pikachu.setVisible(false);
         }
@@ -392,7 +392,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new arctozolt(icon));
+            teams.add(new arctozolt());
             poke[btn] = true;
             Arctozolt.setVisible(false);
         }

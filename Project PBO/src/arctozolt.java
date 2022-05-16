@@ -12,12 +12,10 @@ import javax.swing.ImageIcon;
  */
 public class arctozolt extends Pokemon implements Ulti{
     
-    public arctozolt(ImageIcon gambar) {
-        super(0,0,gambar);
-        // 0,0 Sementara mek buat ga error ae
-    }
-
     public arctozolt() {
+        super(0,0);
+        // 0,0 Sementara mek buat ga error ae
+        gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
     }
 
     @Override

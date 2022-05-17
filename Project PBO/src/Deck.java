@@ -127,6 +127,7 @@ public class Deck extends javax.swing.JFrame {
         Back.setText("Back");
         Back.setBorderPainted(false);
         Back.setContentAreaFilled(false);
+        Back.setFocusPainted(false);
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -208,26 +209,26 @@ public class Deck extends javax.swing.JFrame {
                     Lobby.teams.add(new blastoise());
                 } else if (temp instanceof braviary) {
                     Lobby.teams.add(new braviary());
-                } else if (temp instanceof pikachu) {
-                    Lobby.teams.add(new pikachu());
+                } else if (temp instanceof pika) {
+                    Lobby.teams.add(new pika());
                 }
             }
         }
         
         //Masih salah
-//       Save sf = new Save(teams);
-//       try {
-//           FileOutputStream fos = new FileOutputStream("save.txt");
-//           ObjectOutputStream oos = new ObjectOutputStream(fos);
-//
-//           oos.writeObject(sf);
-//           oos.close();
-//           fos.close();
-//           System.out.println("Data Saved!");
-//
-//       } catch (Exception e) {
-//           System.out.println("There's Problem on Save!" + e);
-//       }
+       Save sf = new Save(teams);
+       try {
+           FileOutputStream fos = new FileOutputStream("save.txt");
+           ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+           oos.writeObject(sf);
+           oos.close();
+           fos.close();
+           System.out.println("Data Saved!");
+
+       } catch (Exception e) {
+           System.out.println("There's Problem on Save!" + e);
+       }
     }//GEN-LAST:event_SaveActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -239,22 +240,19 @@ public class Deck extends javax.swing.JFrame {
     private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
         // TODO add your handling code here:
         //Masih salah
-//        File file = new File("save.txt");
-//        if (file.exists()){
-//            try {
-//                FileInputStream fis = new FileInputStream("save.txt");
-//                ObjectInputStream ois = new ObjectInputStream(fis);
-//                Save save = (Save) ois.readObject();
-//                teams = save.tim;
-//                ois.close();
-//                fis.close();
-//                System.out.println("Sukses load data!");
-//            } catch (IOException e){
-//                System.out.println("There's Problem on load!" + e);
-//            } catch (ClassNotFoundException ex){
-//                System.out.println("Class Not Found!");
-//            }
-//        }
+            try {
+                FileInputStream fis = new FileInputStream("save.txt");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                Save save = (Save) ois.readObject();
+                Lobby.teams = save.tim;
+                ois.close();
+                fis.close();
+                System.out.println("Sukses load data!");
+            } catch (IOException e){
+                System.out.println("There's Problem on load!" + e);
+            } catch (ClassNotFoundException ex){
+                System.out.println("Class Not Found!");
+            }
         // Load deck yang sebelumnya pernah di set
         if (Lobby.teams.size() == 3) {
             // Reset Visual
@@ -280,8 +278,8 @@ public class Deck extends javax.swing.JFrame {
                     this.teams.add(new blastoise());
                 } else if (temp instanceof braviary) {
                     this.teams.add(new braviary());
-                } else if (temp instanceof pikachu) {
-                    this.teams.add(new pikachu());
+                } else if (temp instanceof pika) {
+                    this.teams.add(new pika());
                 }
             }
             // Update Visual
@@ -296,7 +294,7 @@ public class Deck extends javax.swing.JFrame {
                         Blastoise.setVisible(false);
                     } else if (temp instanceof braviary) {
                         Braviary.setVisible(false);
-                    } else if (temp instanceof pikachu) {
+                    } else if (temp instanceof pika) {
                         Pikachu.setVisible(false);
                     }
 
@@ -408,7 +406,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new pikachu());
+            teams.add(new pika());
             poke[btn] = true;
             Pikachu.setVisible(false);
         }
@@ -450,7 +448,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (temp instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (temp instanceof pikachu) {
+        } else if (temp instanceof pika) {
             Pikachu.setVisible(true);
         }
 
@@ -471,7 +469,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (temp instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (temp instanceof pikachu) {
+        } else if (temp instanceof pika) {
             Pikachu.setVisible(true);
         }
 
@@ -492,7 +490,7 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
         } else if (temp instanceof braviary) {
             Braviary.setVisible(true);
-        } else if (temp instanceof pikachu) {
+        } else if (temp instanceof pika) {
             Pikachu.setVisible(true);
         }
 

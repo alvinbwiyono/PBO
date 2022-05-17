@@ -1,4 +1,5 @@
 
+import java.io.Serializable;
 import java.util.Random;
 import javax.swing.ImageIcon;
 
@@ -11,7 +12,7 @@ import javax.swing.ImageIcon;
  *
  * @author HP
  */
-public abstract class Pokemon{
+public abstract class Pokemon implements Serializable{
     protected int maxHealth,currHealth,damage;
     protected ImageIcon gambar;
 

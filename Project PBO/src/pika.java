@@ -7,9 +7,9 @@
  *
  * @author Fiko
  */
-public class pikachu extends Pokemon implements Ulti{
+public class pika extends Pokemon implements Ulti{
     //MAGICAL (Skill)(Poisoned)
-    public pikachu() {
+    public pika() {
         super(90, 2);
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
     }

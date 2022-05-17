@@ -91,6 +91,11 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().add(previous, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 90, -1));
 
         start.setText("START");
+        start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startActionPerformed(evt);
+            }
+        });
         getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
         Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
@@ -124,7 +129,7 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 140, 120));
 
         arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
-        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 800, 530));
+        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 800, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +173,12 @@ public class Arena extends javax.swing.JFrame {
     private void Poke3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke3ActionPerformed
 
     }//GEN-LAST:event_Poke3ActionPerformed
+
+    private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
+        Battle battle = new Battle();
+        battle.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_startActionPerformed
     
     private Icon bgArena(){
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));

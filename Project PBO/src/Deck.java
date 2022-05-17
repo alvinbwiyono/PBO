@@ -44,6 +44,9 @@ public class Deck extends javax.swing.JFrame {
             poke[i] = false;
         }
         teams.clear();
+        for (int i = 0; i < 3; i++) {
+            teams.add(null);
+        }
     }
 
     /**
@@ -197,7 +200,14 @@ public class Deck extends javax.swing.JFrame {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
         // Simpan deck untuk nantinya digunakan battle
-        if (teams.size() == 3) {
+        boolean full = true;
+        for (int i = 0; i < 3; i++) {
+            if (poke[i] == false) {
+                full = false;
+            }
+        }
+
+        if (full) {
             Lobby.teams.clear();
             for (int i = 0; i < 3; i++) {
                 Pokemon temp = teams.get(i);
@@ -213,22 +223,21 @@ public class Deck extends javax.swing.JFrame {
                     Lobby.teams.add(new pika());
                 }
             }
+
+            Save sf = new Save(teams);
+            try {
+                FileOutputStream fos = new FileOutputStream("save.txt");
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+                oos.writeObject(sf);
+                oos.close();
+                fos.close();
+                System.out.println("Data Saved!");
+
+            } catch (Exception e) {
+                System.out.println("There's Problem on Save!" + e);
+            }
         }
-        
-        //Masih salah
-       Save sf = new Save(teams);
-       try {
-           FileOutputStream fos = new FileOutputStream("save.txt");
-           ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-           oos.writeObject(sf);
-           oos.close();
-           fos.close();
-           System.out.println("Data Saved!");
-
-       } catch (Exception e) {
-           System.out.println("There's Problem on Save!" + e);
-       }
     }//GEN-LAST:event_SaveActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
@@ -239,20 +248,19 @@ public class Deck extends javax.swing.JFrame {
 
     private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
         // TODO add your handling code here:
-        //Masih salah
-            try {
-                FileInputStream fis = new FileInputStream("save.txt");
-                ObjectInputStream ois = new ObjectInputStream(fis);
-                Save save = (Save) ois.readObject();
-                Lobby.teams = save.tim;
-                ois.close();
-                fis.close();
-                System.out.println("Sukses load data!");
-            } catch (IOException e){
-                System.out.println("There's Problem on load!" + e);
-            } catch (ClassNotFoundException ex){
-                System.out.println("Class Not Found!");
-            }
+        try {
+            FileInputStream fis = new FileInputStream("save.txt");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Save save = (Save) ois.readObject();
+            Lobby.teams = save.tim;
+            ois.close();
+            fis.close();
+            System.out.println("Sukses load data!");
+        } catch (IOException e) {
+            System.out.println("There's Problem on load!" + e);
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Class Not Found!");
+        }
         // Load deck yang sebelumnya pernah di set
         if (Lobby.teams.size() == 3) {
             // Reset Visual
@@ -261,25 +269,28 @@ public class Deck extends javax.swing.JFrame {
             Blastoise.setVisible(true);
             Braviary.setVisible(true);
             Pikachu.setVisible(true);
-            
+
             Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
             Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
             Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
             this.teams.clear();
-            
+            for (int i = 0; i < 3; i++) {
+                this.teams.add(null);
+            }
+
             // Load
             for (int i = 0; i < 3; i++) {
                 Pokemon temp = Lobby.teams.get(i);
                 if (temp instanceof arctozolt) {
-                    this.teams.add(new arctozolt());
+                    this.teams.set(i, new arctozolt());
                 } else if (temp instanceof articuno) {
-                    this.teams.add(new articuno());
+                    this.teams.set(i, new articuno());
                 } else if (temp instanceof blastoise) {
-                    this.teams.add(new blastoise());
+                    this.teams.set(i, new blastoise());
                 } else if (temp instanceof braviary) {
-                    this.teams.add(new braviary());
+                    this.teams.set(i, new braviary());
                 } else if (temp instanceof pika) {
-                    this.teams.add(new pika());
+                    this.teams.set(i, new pika());
                 }
             }
             // Update Visual
@@ -309,7 +320,6 @@ public class Deck extends javax.swing.JFrame {
                         Poke3.setIcon(temp.getGambar());
                         poke[2] = true;
                     }
-
                 }
             }
         }
@@ -340,7 +350,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new braviary());
+            teams.set(btn, new braviary());
             poke[btn] = true;
             Braviary.setVisible(false);
         }
@@ -362,7 +372,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new articuno());
+            teams.set(btn, new articuno());
             poke[btn] = true;
             Articuno.setVisible(false);
         }
@@ -384,7 +394,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new blastoise());
+            teams.set(btn, new blastoise());
             poke[btn] = true;
             Blastoise.setVisible(false);
         }
@@ -406,7 +416,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new pika());
+            teams.set(btn, new pika());
             poke[btn] = true;
             Pikachu.setVisible(false);
         }
@@ -428,7 +438,7 @@ public class Deck extends javax.swing.JFrame {
                 // Poke3
                 Poke3.setIcon(icon);
             }
-            teams.add(new arctozolt());
+            teams.set(btn, new arctozolt());
             poke[btn] = true;
             Arctozolt.setVisible(false);
         }
@@ -452,7 +462,7 @@ public class Deck extends javax.swing.JFrame {
             Pikachu.setVisible(true);
         }
 
-        teams.remove(0);
+        teams.set(0, null);
     }//GEN-LAST:event_Poke1ActionPerformed
 
     private void Poke2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke2ActionPerformed
@@ -473,7 +483,7 @@ public class Deck extends javax.swing.JFrame {
             Pikachu.setVisible(true);
         }
 
-        teams.remove(1);
+        teams.set(1, null);
     }//GEN-LAST:event_Poke2ActionPerformed
 
     private void Poke3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke3ActionPerformed
@@ -494,7 +504,7 @@ public class Deck extends javax.swing.JFrame {
             Pikachu.setVisible(true);
         }
 
-        teams.remove(2);
+        teams.set(2, null);
     }//GEN-LAST:event_Poke3ActionPerformed
 
     /**

@@ -62,9 +62,9 @@ public class Menu extends javax.swing.JFrame {
         battle = new javax.swing.JButton();
         back = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        arena = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tim.setBackground(new java.awt.Color(102, 102, 255));
         tim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -77,6 +77,7 @@ public class Menu extends javax.swing.JFrame {
                 timActionPerformed(evt);
             }
         });
+        getContentPane().add(tim, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 106, 143, 38));
 
         info.setBackground(new java.awt.Color(255, 255, 51));
         info.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -89,10 +90,11 @@ public class Menu extends javax.swing.JFrame {
                 infoActionPerformed(evt);
             }
         });
+        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 172, 143, 38));
 
         battle.setBackground(new java.awt.Color(255, 51, 51));
         battle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        battle.setText("BATLE");
+        battle.setText("BATTLE");
         battle.setBorder(null);
         battle.setBorderPainted(false);
         battle.setFocusPainted(false);
@@ -101,6 +103,7 @@ public class Menu extends javax.swing.JFrame {
                 battleActionPerformed(evt);
             }
         });
+        getContentPane().add(battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 237, 143, 38));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -113,52 +116,10 @@ public class Menu extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 304, 143, 38));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
-
-        arena.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        arena.setText("ARENA");
-        arena.setFocusPainted(false);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(328, 328, 328)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(arena, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(battle, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tim, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(330, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(tim, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(arena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(battle, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,7 +153,6 @@ public class Menu extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton arena;
     private javax.swing.JButton back;
     private javax.swing.JButton battle;
     private javax.swing.JButton info;

@@ -197,7 +197,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(pokeball, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 140, 120));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg9.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

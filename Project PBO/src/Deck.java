@@ -148,6 +148,7 @@ public class Deck extends javax.swing.JFrame {
         Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke1.setBorderPainted(false);
         Poke1.setContentAreaFilled(false);
+        Poke1.setFocusPainted(false);
         Poke1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke1ActionPerformed(evt);
@@ -158,6 +159,7 @@ public class Deck extends javax.swing.JFrame {
         Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke2.setBorderPainted(false);
         Poke2.setContentAreaFilled(false);
+        Poke2.setFocusPainted(false);
         Poke2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke2ActionPerformed(evt);
@@ -168,6 +170,7 @@ public class Deck extends javax.swing.JFrame {
         Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke3.setBorderPainted(false);
         Poke3.setContentAreaFilled(false);
+        Poke3.setFocusPainted(false);
         Poke3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke3ActionPerformed(evt);
@@ -176,6 +179,7 @@ public class Deck extends javax.swing.JFrame {
         getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 140, 120));
 
         Save.setText("Save");
+        Save.setFocusPainted(false);
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
@@ -184,6 +188,7 @@ public class Deck extends javax.swing.JFrame {
         getContentPane().add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 440, -1, -1));
 
         Load.setText("Load");
+        Load.setFocusPainted(false);
         Load.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoadActionPerformed(evt);
@@ -192,7 +197,7 @@ public class Deck extends javax.swing.JFrame {
         getContentPane().add(Load, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, -1, -1));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

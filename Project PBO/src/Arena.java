@@ -67,6 +67,7 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         back.setText("BACK");
+        back.setFocusPainted(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -75,6 +76,7 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
 
         next.setText("NEXT");
+        next.setFocusPainted(false);
         next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextActionPerformed(evt);
@@ -83,14 +85,16 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(663, 170, 80, -1));
 
         previous.setText("PREVIOUS");
+        previous.setFocusPainted(false);
         previous.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousActionPerformed(evt);
             }
         });
-        getContentPane().add(previous, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 90, -1));
+        getContentPane().add(previous, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 100, -1));
 
         start.setText("START");
+        start.setFocusPainted(false);
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startActionPerformed(evt);
@@ -101,6 +105,7 @@ public class Arena extends javax.swing.JFrame {
         Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke1.setBorderPainted(false);
         Poke1.setContentAreaFilled(false);
+        Poke1.setFocusPainted(false);
         Poke1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke1ActionPerformed(evt);
@@ -111,6 +116,7 @@ public class Arena extends javax.swing.JFrame {
         Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke2.setBorderPainted(false);
         Poke2.setContentAreaFilled(false);
+        Poke2.setFocusPainted(false);
         Poke2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke2ActionPerformed(evt);
@@ -121,6 +127,7 @@ public class Arena extends javax.swing.JFrame {
         Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
         Poke3.setBorderPainted(false);
         Poke3.setContentAreaFilled(false);
+        Poke3.setFocusPainted(false);
         Poke3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Poke3ActionPerformed(evt);
@@ -129,7 +136,7 @@ public class Arena extends javax.swing.JFrame {
         getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 140, 120));
 
         arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
-        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 800, 540));
+        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

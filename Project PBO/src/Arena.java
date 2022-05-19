@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
  */
 public class Arena extends javax.swing.JFrame {
     
-    static int pilArena=1;
+    static int pilArena;
     Deck deck;
     
     public Arena() {
@@ -32,7 +32,7 @@ public class Arena extends javax.swing.JFrame {
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
         arena.setIcon(icon);
         previous.setVisible(false);
-        
+        pilArena=1;
         for (int i = 0; i < Lobby.teams.size(); i++) {
             Pokemon poke = Lobby.teams.get(i);
             if(i==0){

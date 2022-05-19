@@ -26,7 +26,6 @@ public class Battle extends javax.swing.JFrame {
     static ArrayList<Pokemon> tim=new ArrayList<>();
     public Battle() {
         initComponents();
-        initComponents();
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
@@ -38,7 +37,7 @@ public class Battle extends javax.swing.JFrame {
         this.setLocation(x, y);
         
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));;
-        
+        musuh.clear();
         if(Arena.pilArena==2){
             icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
         }else if(Arena.pilArena==3){
@@ -50,9 +49,12 @@ public class Battle extends javax.swing.JFrame {
                 tim.add(Lobby.teams.get(i).clone());
             } catch (CloneNotSupportedException ex) {
                 
+            } catch (IndexOutOfBoundsException ex){
+                
             }
         }
         Random rand=new Random();
+        ImageIcon gmbr=null;
         boolean run=true;
         while (run&&musuh.size()<3) {
             run=false;
@@ -60,14 +62,19 @@ public class Battle extends javax.swing.JFrame {
             int pil=rand.nextInt(5);
             if(pil==0){
                 tambah=new arctozolt();
+                gmbr = new ImageIcon("src/pokemon_lawan/arctozolt.png");
             }else if(pil==1){
                 tambah=new articuno();
+                gmbr = new ImageIcon("src/pokemon_lawan/articuno.png");
             }else if(pil==2){
                 tambah=new blastoise();
+                gmbr = new ImageIcon("src/pokemon_lawan/blastoise.png");
             }else if(pil==3){
                 tambah=new braviary();
+                gmbr = new ImageIcon("src/pokemon_lawan/braviary.png");
             }else if(pil==4){
                 tambah=new pika();
+                gmbr = new ImageIcon("src/pokemon_lawan/pikachu.png");
             }
             for (int i = 0; i < musuh.size(); i++) {
                 if(tambah==musuh.get(i)){
@@ -76,9 +83,14 @@ public class Battle extends javax.swing.JFrame {
             }
             if(!run==true){
                 musuh.add(tambah);
+                musuh.get(musuh.size()-1).setGambar(gmbr);
                 run=true;
             }
         }
+        healthally.setText(tim.get(0).getCurrHealth()+"/"+tim.get(0).getMaxHealth());
+        healthenemy.setText(musuh.get(0).getCurrHealth()+"/"+musuh.get(0).getMaxHealth());
+        ally.setIcon(tim.get(0).getGambar());
+        enemy.setIcon(musuh.get(0).getGambar());
     }
 
     /**
@@ -90,14 +102,63 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jLabel1 = new javax.swing.JLabel();
+        enemy = new javax.swing.JLabel();
+        ally = new javax.swing.JLabel();
+        healthally = new javax.swing.JLabel();
+        healthenemy = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         arena = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextPane1.setEditable(false);
+        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextPane1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextPane1.setEnabled(false);
+        jTextPane1.setOpaque(false);
+        jScrollPane1.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 160, 120));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 240, 220));
+        getContentPane().add(enemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 180, 110));
+        getContentPane().add(ally, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 100));
+
+        healthally.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        healthally.setForeground(new java.awt.Color(255, 255, 51));
+        getContentPane().add(healthally, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 80, 30));
+
+        healthenemy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        healthenemy.setForeground(new java.awt.Color(255, 255, 0));
+        getContentPane().add(healthenemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 120, 30));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("EXIT");
+        jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, -1));
+
+        arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg5.jpg"))); // NOI18N
         getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Menu next=new Menu();
+        next.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +196,14 @@ public class Battle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ally;
     private javax.swing.JLabel arena;
+    private javax.swing.JLabel enemy;
+    private javax.swing.JLabel healthally;
+    private javax.swing.JLabel healthenemy;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

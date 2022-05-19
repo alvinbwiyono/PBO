@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -237,7 +238,7 @@ public class Deck extends javax.swing.JFrame {
                 oos.writeObject(sf);
                 oos.close();
                 fos.close();
-                System.out.println("Data Saved!");
+                JOptionPane.showMessageDialog(this, "Data Berhasil Disimpan!");
 
             } catch (Exception e) {
                 System.out.println("There's Problem on Save!" + e);
@@ -260,7 +261,7 @@ public class Deck extends javax.swing.JFrame {
             Lobby.teams = save.tim;
             ois.close();
             fis.close();
-            System.out.println("Sukses load data!");
+            JOptionPane.showMessageDialog(this, "Sukses Load Data!");
         } catch (IOException e) {
             System.out.println("There's Problem on load!" + e);
         } catch (ClassNotFoundException ex) {

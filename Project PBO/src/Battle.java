@@ -102,6 +102,9 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        atk = new javax.swing.JButton();
+        ult = new javax.swing.JButton();
+        skil = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
@@ -114,6 +117,34 @@ public class Battle extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        atk.setBackground(new java.awt.Color(255, 0, 51));
+        atk.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        atk.setForeground(new java.awt.Color(255, 255, 255));
+        atk.setText("ATTACK");
+        atk.setBorder(null);
+        atk.setBorderPainted(false);
+        atk.setFocusable(false);
+        getContentPane().add(atk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, 80));
+
+        ult.setBackground(new java.awt.Color(255, 255, 0));
+        ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ult.setForeground(new java.awt.Color(0, 0, 0));
+        ult.setText("ULTI");
+        ult.setBorder(null);
+        ult.setBorderPainted(false);
+        ult.setEnabled(false);
+        ult.setFocusable(false);
+        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 90, 40));
+
+        skil.setBackground(new java.awt.Color(102, 204, 0));
+        skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        skil.setForeground(new java.awt.Color(255, 255, 255));
+        skil.setText("SKILL");
+        skil.setBorder(null);
+        skil.setBorderPainted(false);
+        skil.setFocusable(false);
+        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 90, 40));
 
         jTextPane1.setEditable(false);
         jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -198,6 +229,7 @@ public class Battle extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ally;
     private javax.swing.JLabel arena;
+    private javax.swing.JButton atk;
     private javax.swing.JLabel enemy;
     private javax.swing.JLabel healthally;
     private javax.swing.JLabel healthenemy;
@@ -205,5 +237,7 @@ public class Battle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JButton skil;
+    private javax.swing.JButton ult;
     // End of variables declaration//GEN-END:variables
 }

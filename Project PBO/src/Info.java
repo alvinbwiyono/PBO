@@ -1,4 +1,8 @@
 
+import java.awt.Color;
+import static java.awt.Color.blue;
+import static java.awt.Color.green;
+import static java.awt.Color.red;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -18,6 +22,8 @@ public class Info extends javax.swing.JFrame {
     /**
      * Creates new form Info
      */
+    Pokemon cet;
+    String hasil;
     public Info() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -38,6 +44,7 @@ public class Info extends javax.swing.JFrame {
 //        pikachuImage.setVisible(false);
         skill.setVisible(false);
         ulti.setVisible(false);
+        
     }
 
     /**
@@ -65,15 +72,18 @@ public class Info extends javax.swing.JFrame {
         skill = new javax.swing.JLabel();
         ulti = new javax.swing.JLabel();
         pokeball = new javax.swing.JButton();
+        ATTACK = new javax.swing.JLabel();
+        HP1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         articuno.setBackground(new java.awt.Color(204, 204, 204));
         articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
         articuno.setBorderPainted(false);
+        articuno.setFocusPainted(false);
         articuno.setOpaque(false);
         articuno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +95,7 @@ public class Info extends javax.swing.JFrame {
         blastoise.setBackground(new java.awt.Color(204, 204, 204));
         blastoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
         blastoise.setBorderPainted(false);
+        blastoise.setFocusPainted(false);
         blastoise.setOpaque(false);
         blastoise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +107,7 @@ public class Info extends javax.swing.JFrame {
         braviary.setBackground(new java.awt.Color(204, 204, 204));
         braviary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
         braviary.setBorderPainted(false);
+        braviary.setFocusPainted(false);
         braviary.setOpaque(false);
         braviary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +120,7 @@ public class Info extends javax.swing.JFrame {
         pikachu.setForeground(new java.awt.Color(204, 204, 204));
         pikachu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
         pikachu.setBorderPainted(false);
+        pikachu.setFocusPainted(false);
         pikachu.setOpaque(false);
         pikachu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,6 +132,7 @@ public class Info extends javax.swing.JFrame {
         arctozolt.setBackground(new java.awt.Color(204, 204, 204));
         arctozolt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
         arctozolt.setBorderPainted(false);
+        arctozolt.setFocusPainted(false);
         arctozolt.setOpaque(false);
         arctozolt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,8 +210,16 @@ public class Info extends javax.swing.JFrame {
         });
         getContentPane().add(pokeball, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 140, 120));
 
+        ATTACK.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ATTACK.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(ATTACK, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 80, 20));
+
+        HP1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        HP1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(HP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 80, 20));
+
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg9.jpg"))); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 490));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,6 +236,10 @@ public class Info extends javax.swing.JFrame {
         stats.setVisible(true);
         skill.setVisible(true);
         ulti.setVisible(true);
+        cet=new arctozolt();
+        HP1.setText("HP : "+cet.getMaxHealth());
+        ATTACK.setText("Attack : "+cet.getDamage());
+        
     }//GEN-LAST:event_arctozoltActionPerformed
 
     private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
@@ -227,6 +253,9 @@ public class Info extends javax.swing.JFrame {
         stats.setVisible(true);
         skill.setVisible(true);
         ulti.setVisible(true);
+        cet=new articuno();
+        HP1.setText("HP : "+cet.getMaxHealth());
+        ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_articunoActionPerformed
 
     private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
@@ -240,6 +269,9 @@ public class Info extends javax.swing.JFrame {
         stats.setVisible(true);
         skill.setVisible(true);
         ulti.setVisible(true);
+        cet=new blastoise();
+        HP1.setText("HP : "+cet.getMaxHealth());
+        ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_blastoiseActionPerformed
 
     private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
@@ -253,6 +285,9 @@ public class Info extends javax.swing.JFrame {
         stats.setVisible(true);
         skill.setVisible(true);
         ulti.setVisible(true);
+        cet=new braviary();
+        HP1.setText("HP : "+cet.getMaxHealth());
+        ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_braviaryActionPerformed
 
     private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
@@ -266,6 +301,9 @@ public class Info extends javax.swing.JFrame {
         stats.setVisible(true);
         skill.setVisible(true);
         ulti.setVisible(true);
+        cet=new pika();
+        HP1.setText("HP : "+cet.getMaxHealth());
+        ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_pikachuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -316,6 +354,8 @@ public class Info extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ATTACK;
+    private javax.swing.JLabel HP1;
     private javax.swing.JButton arctozolt;
     private javax.swing.JButton articuno;
     private javax.swing.JButton blastoise;

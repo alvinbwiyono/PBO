@@ -9,5 +9,4 @@
  */
 public interface Ulti {
     int ult();
-    
 }

@@ -1,6 +1,10 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -18,6 +22,8 @@ public class Battle extends javax.swing.JFrame {
     /**
      * Creates new form Battle
      */
+    static ArrayList<Pokemon> musuh=new ArrayList<>();
+    static ArrayList<Pokemon> tim=new ArrayList<>();
     public Battle() {
         initComponents();
         initComponents();
@@ -39,6 +45,40 @@ public class Battle extends javax.swing.JFrame {
             icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
         }
         arena.setIcon(icon);
+        for (int i = 0; i < 3; i++) {
+            try {
+                tim.add(Lobby.teams.get(i).clone());
+            } catch (CloneNotSupportedException ex) {
+                
+            }
+        }
+        Random rand=new Random();
+        boolean run=true;
+        while (run&&musuh.size()<3) {
+            run=false;
+            Pokemon tambah=null;
+            int pil=rand.nextInt(5);
+            if(pil==0){
+                tambah=new arctozolt();
+            }else if(pil==1){
+                tambah=new articuno();
+            }else if(pil==2){
+                tambah=new blastoise();
+            }else if(pil==3){
+                tambah=new braviary();
+            }else if(pil==4){
+                tambah=new pika();
+            }
+            for (int i = 0; i < musuh.size(); i++) {
+                if(tambah==musuh.get(i)){
+                    run=true;
+                }
+            }
+            if(!run==true){
+                musuh.add(tambah);
+                run=true;
+            }
+        }
     }
 
     /**
@@ -54,7 +94,7 @@ public class Battle extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 800, 560));
+        getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

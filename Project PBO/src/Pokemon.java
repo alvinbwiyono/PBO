@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  *
  * @author HP
  */
-public abstract class Pokemon implements Serializable{
+public abstract class Pokemon implements Serializable, Cloneable{
     protected int maxHealth,currHealth,damage;
     protected ImageIcon gambar;
 
@@ -63,5 +63,11 @@ public abstract class Pokemon implements Serializable{
     public void setGambar(ImageIcon gambar) {
         this.gambar = gambar;
     }
+
+    @Override
+    protected Pokemon clone() throws CloneNotSupportedException {
+        return (Pokemon)super.clone();  
+    }
+    
     
 }

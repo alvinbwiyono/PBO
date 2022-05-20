@@ -99,6 +99,7 @@ public class Lobby extends javax.swing.JFrame {
 
         this.setLocation(x, y);
     }
+    
     public static void gantiLagu(File f1){
         try {
             clip.stop();

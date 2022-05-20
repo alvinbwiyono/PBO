@@ -222,7 +222,15 @@ public class Battle extends javax.swing.JFrame {
         // TODO add your handling code here:
         Sound.soundbutton();
     }//GEN-LAST:event_ultActionPerformed
-
+    
+    private void gerakmusuh(){
+        
+    }
+    
+    private void cekmenang(){
+        
+    }
+    
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();

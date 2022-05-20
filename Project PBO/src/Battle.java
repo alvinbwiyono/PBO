@@ -178,7 +178,7 @@ public class Battle extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 240, 220));
-        getContentPane().add(enemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 180, 110));
+        getContentPane().add(enemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 180, 100));
         getContentPane().add(ally, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 100));
 
         healthally.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -187,7 +187,7 @@ public class Battle extends javax.swing.JFrame {
 
         healthenemy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         healthenemy.setForeground(new java.awt.Color(255, 255, 0));
-        getContentPane().add(healthenemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 120, 30));
+        getContentPane().add(healthenemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 120, 30));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("EXIT");

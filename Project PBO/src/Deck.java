@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -267,10 +268,12 @@ public class Deck extends javax.swing.JFrame {
             fis.close();
             JOptionPane.showMessageDialog(this, "Sukses Load Data!");
             Sound.soundbutton();
-        } catch (IOException e) {
-            System.out.println("There's Problem on load!" + e);
+        } catch (FileNotFoundException ex) {
+            
         } catch (ClassNotFoundException ex) {
             System.out.println("Class Not Found!");
+        } catch (IOException e){
+            System.out.println("There's Problem on load!" + e);
         }
         // Load deck yang sebelumnya pernah di set
         if (Lobby.teams.size() == 3) {

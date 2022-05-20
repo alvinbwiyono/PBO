@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -24,6 +25,8 @@ public class Battle extends javax.swing.JFrame {
      */
     static ArrayList<Pokemon> musuh=new ArrayList<>();
     static ArrayList<Pokemon> tim=new ArrayList<>();
+    static int jmlultially=1;    
+    static int jmlultienemy=1;    
     public Battle() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -81,7 +84,8 @@ public class Battle extends javax.swing.JFrame {
                 gmbr = new ImageIcon("src/pokemon_lawan/pikachu.png");
             }
             for (int i = 0; i < musuh.size(); i++) {
-                if(tambah==musuh.get(i)){
+                if(tambah.getMaxHealth()==musuh.get(i).getMaxHealth()&&
+                   tambah.getDamage()==musuh.get(i).getDamage()){
                     run=true;
                 }
             }
@@ -93,8 +97,10 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Cetak Health dan Icon ke Layar
-        healthally.setText(tim.get(0).getCurrHealth()+"/"+tim.get(0).getMaxHealth());
-        healthenemy.setText(musuh.get(0).getCurrHealth()+"/"+musuh.get(0).getMaxHealth());
+        AllyHealth.setMaximum(tim.get(0).getMaxHealth());
+        AllyHealth.setValue(tim.get(0).getCurrHealth());
+        EnemyHealth.setMaximum(musuh.get(0).getMaxHealth());
+        EnemyHealth.setValue(musuh.get(0).getCurrHealth());
         ally.setIcon(tim.get(0).getGambar());
         enemy.setIcon(musuh.get(0).getGambar());
     }
@@ -108,26 +114,44 @@ public class Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         atk = new javax.swing.JButton();
         ult = new javax.swing.JButton();
         skil = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         enemy = new javax.swing.JLabel();
         ally = new javax.swing.JLabel();
-        healthally = new javax.swing.JLabel();
-        healthenemy = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        EnemyHealth = new javax.swing.JProgressBar();
+        AllyHealth = new javax.swing.JProgressBar();
         arena = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("ATTACK");
+        jLabel2.setFocusable(false);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, 50, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("SKILL");
+        jLabel3.setFocusable(false);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 40, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("ULTI");
+        jLabel4.setFocusable(false);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 40, 30));
+
         atk.setBackground(new java.awt.Color(255, 0, 51));
         atk.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         atk.setForeground(new java.awt.Color(255, 255, 255));
-        atk.setText("ATTACK");
         atk.setBorder(null);
         atk.setBorderPainted(false);
         atk.setFocusable(false);
@@ -136,12 +160,11 @@ public class Battle extends javax.swing.JFrame {
                 atkActionPerformed(evt);
             }
         });
-        getContentPane().add(atk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, 80));
+        getContentPane().add(atk, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 390, 50, 80));
 
         ult.setBackground(new java.awt.Color(255, 255, 0));
         ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ult.setForeground(new java.awt.Color(0, 0, 0));
-        ult.setText("ULTI");
         ult.setBorder(null);
         ult.setBorderPainted(false);
         ult.setEnabled(false);
@@ -151,12 +174,12 @@ public class Battle extends javax.swing.JFrame {
                 ultActionPerformed(evt);
             }
         });
-        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 90, 40));
+        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 390, 50, 80));
 
         skil.setBackground(new java.awt.Color(102, 204, 0));
         skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skil.setForeground(new java.awt.Color(255, 255, 255));
-        skil.setText("SKILL");
+        skil.setActionCommand("");
         skil.setBorder(null);
         skil.setBorderPainted(false);
         skil.setFocusable(false);
@@ -165,29 +188,12 @@ public class Battle extends javax.swing.JFrame {
                 skilActionPerformed(evt);
             }
         });
-        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 90, 40));
+        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 390, 52, 80));
 
-        jTextPane1.setEditable(false);
-        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTextPane1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextPane1.setEnabled(false);
-        jTextPane1.setOpaque(false);
-        jScrollPane1.setViewportView(jTextPane1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 160, 120));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/1.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 240, 220));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bgbutton.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 200, 180));
         getContentPane().add(enemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 180, 100));
-        getContentPane().add(ally, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 200, 100));
-
-        healthally.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        healthally.setForeground(new java.awt.Color(255, 255, 51));
-        getContentPane().add(healthally, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 80, 30));
-
-        healthenemy.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        healthenemy.setForeground(new java.awt.Color(255, 255, 0));
-        getContentPane().add(healthenemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 120, 30));
+        getContentPane().add(ally, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 200, 100));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("EXIT");
@@ -199,12 +205,28 @@ public class Battle extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, -1));
 
+        EnemyHealth.setForeground(new java.awt.Color(255, 51, 51));
+        EnemyHealth.setToolTipText("");
+        EnemyHealth.setValue(100);
+        EnemyHealth.setStringPainted(true);
+        getContentPane().add(EnemyHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, -1, 20));
+
+        AllyHealth.setForeground(new java.awt.Color(255, 51, 51));
+        AllyHealth.setToolTipText("");
+        AllyHealth.setValue(100);
+        AllyHealth.setStringPainted(true);
+        getContentPane().add(AllyHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
+
         arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg5.jpg"))); // NOI18N
         getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void updatehealth(){
+        AllyHealth.setValue(tim.get(0).getCurrHealth());
+        EnemyHealth.setValue(musuh.get(0).getCurrHealth());
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
@@ -214,21 +236,60 @@ public class Battle extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void atkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atkActionPerformed
+
         // TODO add your handling code here:
         Sound.soundbutton();
+        musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-tim.get(0).getDamage());
+        gerakmusuh();
+        updatehealth();
+        cekmenang();
     }//GEN-LAST:event_atkActionPerformed
 
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
+        jmlultially=0;
+        
     }//GEN-LAST:event_ultActionPerformed
     
     private void gerakmusuh(){
+        Random rand=new Random();
+        int pil=rand.nextInt(3);
         
+        if(tim.get(0).cekdarah()&&jmlultially==1){
+            ult.setEnabled(true);
+        }
     }
     
+    public void updatepokemon(){
+        AllyHealth.setMaximum(tim.get(0).getMaxHealth());
+        AllyHealth.setValue(tim.get(0).getCurrHealth());
+        EnemyHealth.setMaximum(musuh.get(0).getMaxHealth());
+        EnemyHealth.setValue(musuh.get(0).getCurrHealth());
+        ally.setIcon(tim.get(0).getGambar());
+        enemy.setIcon(musuh.get(0).getGambar());
+    }
     private void cekmenang(){
-        
+        if(tim.get(0).getCurrHealth()<=0){
+            tim.remove(0);
+            if(tim.size()==0){
+                
+            }else{
+                updatepokemon();
+            }
+        }
+        if(musuh.get(0).getCurrHealth()<=0){
+            musuh.remove(0);
+            if(musuh.size()==0){
+                JOptionPane.showMessageDialog(this, "You Win");
+                Sound.soundbutton();
+                Menu next=new Menu();
+                next.setVisible(true);
+                this.dispose();
+            }else{
+                updatepokemon();
+            }
+        }
     }
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
@@ -272,16 +333,17 @@ public class Battle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar AllyHealth;
+    private javax.swing.JProgressBar EnemyHealth;
     private javax.swing.JLabel ally;
     private javax.swing.JLabel arena;
     private javax.swing.JButton atk;
     private javax.swing.JLabel enemy;
-    private javax.swing.JLabel healthally;
-    private javax.swing.JLabel healthenemy;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton skil;
     private javax.swing.JButton ult;
     // End of variables declaration//GEN-END:variables

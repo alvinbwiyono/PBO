@@ -127,4 +127,39 @@ public class Sound {
         volume.setValue(-10f);
         clip.start();
     } 
+    //sfx 4
+    public static void win(){
+        f = new File("src/sound/sfx/win.wav");
+        try {
+            audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
+        } catch (FileNotFoundException ex){
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            clip.open(audioIn);
+        } catch (NullPointerException ex){ 
+             
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        volume.setValue(-10f);
+        clip.start();
+    } 
+
 }
+

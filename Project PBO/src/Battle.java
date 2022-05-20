@@ -37,13 +37,14 @@ public class Battle extends javax.swing.JFrame {
         this.setLocation(x, y);
         
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));;
-        musuh.clear();
         if(Arena.pilArena==2){
             icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
         }else if(Arena.pilArena==3){
             icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
         }
         arena.setIcon(icon);
+        
+        // Untuk Clone Lobby.teams 
         for (int i = 0; i < 3; i++) {
             try {
                 tim.add(Lobby.teams.get(i).clone());
@@ -53,7 +54,10 @@ public class Battle extends javax.swing.JFrame {
                 
             }
         }
+        
+        // Untuk Isi Pokemon Musuh
         Random rand=new Random();
+        musuh.clear();
         ImageIcon gmbr=null;
         boolean run=true;
         while (run&&musuh.size()<3) {
@@ -87,6 +91,8 @@ public class Battle extends javax.swing.JFrame {
                 run=true;
             }
         }
+        
+        // Cetak Health dan Icon ke Layar
         healthally.setText(tim.get(0).getCurrHealth()+"/"+tim.get(0).getMaxHealth());
         healthenemy.setText(musuh.get(0).getCurrHealth()+"/"+musuh.get(0).getMaxHealth());
         ally.setIcon(tim.get(0).getGambar());

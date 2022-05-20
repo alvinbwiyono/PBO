@@ -29,10 +29,6 @@ public abstract class Pokemon implements Serializable, Cloneable{
         return maxHealth;
     }
 
-    public void setMaxHealth(int maxHealth) {
-        this.maxHealth = maxHealth;
-    }
-
     public int getCurrHealth() {
         return currHealth;
     }
@@ -43,10 +39,6 @@ public abstract class Pokemon implements Serializable, Cloneable{
 
     public int getDamage() {
         return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
     }
     
     public abstract int skill();
@@ -64,6 +56,14 @@ public abstract class Pokemon implements Serializable, Cloneable{
         this.gambar = gambar;
     }
 
+    public boolean cekdarah(){
+        if(currHealth<maxHealth-((maxHealth*50)/100)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
     @Override
     protected Pokemon clone() throws CloneNotSupportedException {
         return (Pokemon)super.clone();  

@@ -186,7 +186,7 @@ public class Arena extends javax.swing.JFrame {
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         Battle battle = new Battle();
-        Sound.soundbutton();
+        Sound.start();
         battle.setVisible(true);
         dispose();
     }//GEN-LAST:event_startActionPerformed

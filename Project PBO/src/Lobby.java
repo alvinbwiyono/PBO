@@ -248,12 +248,12 @@ public class Lobby extends javax.swing.JFrame {
                     "Exit",
                     JOptionPane.YES_NO_OPTION, 
                     JOptionPane.QUESTION_MESSAGE,img, options, null);
-    
+        
+        Sound.soundbutton();
         if(jawab == JOptionPane.NO_OPTION){
             JOptionPane.showMessageDialog(this, "Thank You For Playing!");
             System.exit(0);
         }
-        Sound.soundbutton();
     }//GEN-LAST:event_Exit1ActionPerformed
 
     private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed

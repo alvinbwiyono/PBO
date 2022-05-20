@@ -23,10 +23,12 @@ public class Battle extends javax.swing.JFrame {
     /**
      * Creates new form Battle
      */
-    static ArrayList<Pokemon> musuh=new ArrayList<>();
-    static ArrayList<Pokemon> tim=new ArrayList<>();
-    static int jmlultially=1;    
-    static int jmlultienemy=1;    
+    ArrayList<Pokemon> musuh=new ArrayList<>();
+    ArrayList<Pokemon> tim=new ArrayList<>();
+    int jmlultially=1;    
+    int jmlultienemy=1;    
+    int cooldownbutton=0;
+    int cooldownenemy=0;
     public Battle() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -46,7 +48,6 @@ public class Battle extends javax.swing.JFrame {
             icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
         }
         arena.setIcon(icon);
-        
         // Untuk Clone Lobby.teams 
         for (int i = 0; i < 3; i++) {
             try {

@@ -231,6 +231,7 @@ public class Info extends javax.swing.JFrame {
 //        blastoiseImage.setVisible(false);
 //        braviaryImage.setVisible(false);
 //        pikachuImage.setVisible(false);
+        Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -248,6 +249,7 @@ public class Info extends javax.swing.JFrame {
 //        blastoiseImage.setVisible(false);
 //        braviaryImage.setVisible(false);
 //        pikachuImage.setVisible(false);
+        Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -264,6 +266,7 @@ public class Info extends javax.swing.JFrame {
 //        blastoiseImage.setVisible(true);
 //        braviaryImage.setVisible(false);
 //        pikachuImage.setVisible(false);
+        Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -280,6 +283,7 @@ public class Info extends javax.swing.JFrame {
 //        blastoiseImage.setVisible(false);
 //        braviaryImage.setVisible(true);
 //        pikachuImage.setVisible(false);
+        Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -296,6 +300,7 @@ public class Info extends javax.swing.JFrame {
 //        blastoiseImage.setVisible(false);
 //        braviaryImage.setVisible(false);
 //        pikachuImage.setVisible(true);
+        Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -308,6 +313,7 @@ public class Info extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Menu menu = new Menu();
+        Sound.soundbutton();
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

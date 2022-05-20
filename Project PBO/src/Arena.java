@@ -142,6 +142,7 @@ public class Arena extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void previousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousActionPerformed
+        Sound.soundbutton();
         if(pilArena!=1){
             pilArena--;
         }
@@ -154,11 +155,13 @@ public class Arena extends javax.swing.JFrame {
     
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         Menu menu = new Menu();
+        Sound.soundbutton();
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        Sound.soundbutton();
         if(pilArena!=3){
             pilArena++;
         }
@@ -183,6 +186,7 @@ public class Arena extends javax.swing.JFrame {
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
         Battle battle = new Battle();
+        Sound.soundbutton();
         battle.setVisible(true);
         dispose();
     }//GEN-LAST:event_startActionPerformed

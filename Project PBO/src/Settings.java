@@ -113,24 +113,28 @@ public class Settings extends javax.swing.JFrame {
 
     private void L3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L3ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         f=new File("src/sound/audio/Lagu 3.wav");
         Lobby.gantiLagu(f);
     }//GEN-LAST:event_L3ActionPerformed
 
     private void L1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L1ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         f=new File("src/sound/audio/Lagu 1.wav");
         Lobby.gantiLagu(f);
     }//GEN-LAST:event_L1ActionPerformed
 
     private void L2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L2ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         f=new File("src/sound/audio/Lagu 2.wav");
         Lobby.gantiLagu(f);
     }//GEN-LAST:event_L2ActionPerformed
 
     private void LMuteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LMuteActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         f=new File("src/sound/audio/1.wav");
         Lobby.gantiLagu(f);
     }//GEN-LAST:event_LMuteActionPerformed

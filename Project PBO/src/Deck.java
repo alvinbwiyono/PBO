@@ -206,6 +206,7 @@ public class Deck extends javax.swing.JFrame {
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
         // TODO add your handling code here:
         // Simpan deck untuk nantinya digunakan battle
+        Sound.soundbutton();
         boolean full = true;
         for (int i = 0; i < 3; i++) {
             if (poke[i] == false) {
@@ -239,6 +240,7 @@ public class Deck extends javax.swing.JFrame {
                 oos.close();
                 fos.close();
                 JOptionPane.showMessageDialog(this, "Data Berhasil Disimpan!");
+                Sound.soundbutton();
 
             } catch (Exception e) {
                 System.out.println("There's Problem on Save!" + e);
@@ -248,12 +250,14 @@ public class Deck extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         Menu menu = new Menu();
+        Sound.soundbutton();
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_BackActionPerformed
 
     private void LoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         try {
             FileInputStream fis = new FileInputStream("save.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -262,6 +266,7 @@ public class Deck extends javax.swing.JFrame {
             ois.close();
             fis.close();
             JOptionPane.showMessageDialog(this, "Sukses Load Data!");
+            Sound.soundbutton();
         } catch (IOException e) {
             System.out.println("There's Problem on load!" + e);
         } catch (ClassNotFoundException ex) {
@@ -342,6 +347,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void BraviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BraviaryActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
 
         int btn = getIndex();
@@ -364,6 +370,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void ArticunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArticunoActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
 
         int btn = getIndex();
@@ -386,6 +393,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void BlastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlastoiseActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
 
         int btn = getIndex();
@@ -408,6 +416,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void PikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PikachuActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
 
         int btn = getIndex();
@@ -430,6 +439,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void ArctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArctozoltActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
 
         int btn = getIndex();
@@ -452,6 +462,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void Poke1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke1ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
         poke[0] = false;
 
@@ -473,6 +484,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void Poke2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke2ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
         poke[1] = false;
 
@@ -494,6 +506,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void Poke3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke3ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
         poke[2] = false;
 

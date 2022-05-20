@@ -126,24 +126,28 @@ public class Menu extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         Lobby lobby = new Lobby("");
+        Sound.soundbutton();
         lobby.setVisible(true);
         dispose();
     }//GEN-LAST:event_backActionPerformed
 
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
         Info info = new Info();
+        Sound.soundbutton();
         info.setVisible(true);
         dispose();
     }//GEN-LAST:event_infoActionPerformed
 
     private void battleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_battleActionPerformed
         Arena battle = new Arena();
+        Sound.soundbutton();
         battle.setVisible(true);
         dispose();
     }//GEN-LAST:event_battleActionPerformed
 
     private void timActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timActionPerformed
         Deck deck = new Deck();
+        Sound.soundbutton();
         deck.setVisible(true);
         dispose();
     }//GEN-LAST:event_timActionPerformed

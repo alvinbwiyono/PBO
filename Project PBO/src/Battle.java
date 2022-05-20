@@ -131,6 +131,11 @@ public class Battle extends javax.swing.JFrame {
         atk.setBorder(null);
         atk.setBorderPainted(false);
         atk.setFocusable(false);
+        atk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atkActionPerformed(evt);
+            }
+        });
         getContentPane().add(atk, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, 80));
 
         ult.setBackground(new java.awt.Color(255, 255, 0));
@@ -141,6 +146,11 @@ public class Battle extends javax.swing.JFrame {
         ult.setBorderPainted(false);
         ult.setEnabled(false);
         ult.setFocusable(false);
+        ult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ultActionPerformed(evt);
+            }
+        });
         getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 90, 40));
 
         skil.setBackground(new java.awt.Color(102, 204, 0));
@@ -150,6 +160,11 @@ public class Battle extends javax.swing.JFrame {
         skil.setBorder(null);
         skil.setBorderPainted(false);
         skil.setFocusable(false);
+        skil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                skilActionPerformed(evt);
+            }
+        });
         getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 90, 40));
 
         jTextPane1.setEditable(false);
@@ -192,10 +207,26 @@ public class Battle extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         Menu next=new Menu();
         next.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void atkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atkActionPerformed
+        // TODO add your handling code here:
+        Sound.soundbutton();
+    }//GEN-LAST:event_atkActionPerformed
+
+    private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
+        // TODO add your handling code here:
+        Sound.soundbutton();
+    }//GEN-LAST:event_ultActionPerformed
+
+    private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
+        // TODO add your handling code here:
+        Sound.soundbutton();
+    }//GEN-LAST:event_skilActionPerformed
 
     /**
      * @param args the command line arguments

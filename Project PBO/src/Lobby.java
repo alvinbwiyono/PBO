@@ -210,6 +210,7 @@ public class Lobby extends javax.swing.JFrame {
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         JTextPane jtp = new JTextPane();
         Document doc = jtp.getDocument();
         ImageIcon img = new ImageIcon("src/Pokeball.png");
@@ -225,17 +226,19 @@ public class Lobby extends javax.swing.JFrame {
 //        jtp.setSize(new Dimension(480, 50));
 //        jtp.setPreferredSize(new Dimension(480, jtp.getPreferredSize().height));
         JOptionPane.showMessageDialog(null,jtp, "INFO",JOptionPane.INFORMATION_MESSAGE);
-        
+        Sound.soundbutton();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void SettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         new Settings(f).setVisible(true);
     }//GEN-LAST:event_SettingActionPerformed
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
         // TODO add your handling code here:
         ImageIcon img=new ImageIcon("src/Pokeball.png");
+        Sound.soundbutton();
         String[] options = new String[2];
         options[0] = "Cancel";
         options[1] = "Exit"; 
@@ -249,29 +252,17 @@ public class Lobby extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Thank You For Playing!");
             System.exit(0);
         }
+        Sound.soundbutton();
     }//GEN-LAST:event_Exit1ActionPerformed
 
     private void playActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playActionPerformed
         // TODO add your handling code here:
+        Sound.soundbutton();
         Menu menu = new Menu();
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_playActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-
-    public JButton getPlay() {
-        return play;
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public void setPlay(JButton play) {
-        this.play = play;
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Exit1;

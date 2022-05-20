@@ -13,12 +13,12 @@ public class braviary extends Pokemon implements Ulti{
         super(90, 6);
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
     }
-
+    // 15% enemy currhp
     @Override
     public int skill() {
         return 0;
     }
-
+    // 30% enemy currhp
     @Override
     public int ult() {
         return 0;

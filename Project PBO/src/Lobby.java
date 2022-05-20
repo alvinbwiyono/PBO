@@ -224,8 +224,6 @@ public class Lobby extends javax.swing.JFrame {
         } catch (BadLocationException ex) {
             Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
         }
-//        jtp.setSize(new Dimension(480, 50));
-//        jtp.setPreferredSize(new Dimension(480, jtp.getPreferredSize().height));
         JOptionPane.showMessageDialog(null,jtp, "INFO",JOptionPane.INFORMATION_MESSAGE);
         Sound.soundbutton();
     }//GEN-LAST:event_jButton3ActionPerformed

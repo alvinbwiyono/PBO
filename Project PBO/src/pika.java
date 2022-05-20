@@ -14,11 +14,13 @@ public class pika extends Pokemon implements Ulti{
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
     }
 
+    // 3 turn 100%
     @Override
     public int skill() {
         return 0;
     }
-
+    
+    // permanen poison 100% 15% enemy currhp
     @Override
     public int ult() {
         return 0;

@@ -17,11 +17,12 @@ public class blastoise extends Pokemon implements Ulti{
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
     }
     
+    // 50% 
     @Override
     public int skill() {
         return 0;
     }
-
+    // dmg +100% , dmg reduc +50%
     @Override
     public int ult() {
         return 0;

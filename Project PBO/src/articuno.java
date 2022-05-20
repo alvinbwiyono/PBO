@@ -16,12 +16,13 @@ import javax.swing.ImageIcon;
         super(110, 2);
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
     }
-
+    
+    // dmg x5
     @Override
     public int skill() {
         return 0;
     }
-
+    // + 50% current health
     @Override
     public int ult() {
         return 0;

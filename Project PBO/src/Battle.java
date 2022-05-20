@@ -238,7 +238,7 @@ public class Battle extends javax.swing.JFrame {
     private void atkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atkActionPerformed
 
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.attack();
         musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-tim.get(0).getDamage());
         gerakmusuh();
         updatehealth();
@@ -281,8 +281,8 @@ public class Battle extends javax.swing.JFrame {
         if(musuh.get(0).getCurrHealth()<=0){
             musuh.remove(0);
             if(musuh.size()==0){
+                Sound.win();
                 JOptionPane.showMessageDialog(this, "You Win");
-                Sound.soundbutton();
                 Menu next=new Menu();
                 next.setVisible(true);
                 this.dispose();

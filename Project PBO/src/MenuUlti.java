@@ -154,7 +154,6 @@ public class MenuUlti extends javax.swing.JFrame {
         // TODO add your handling code here:
         Battle.setPil(2);
         dispose();
-
     }//GEN-LAST:event_button3ActionPerformed
 
     /**

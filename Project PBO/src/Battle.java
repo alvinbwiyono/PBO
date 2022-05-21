@@ -286,11 +286,7 @@ public class Battle extends javax.swing.JFrame {
         turn++;
         updatehealth();
         cekmenang();
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException ex) {
-            
-        }
+
         if(enemystun==0){
             gerakmusuh();
         }
@@ -305,7 +301,25 @@ public class Battle extends javax.swing.JFrame {
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        new MenuUlti().setVisible(true);
+        String[] possibilities = {null,null,null};
+        for (int i = 0; i < tim.size(); i++) {
+            possibilities[i]=tim.get(i).getNama();
+        }
+        String s = (String)JOptionPane.showInputDialog(
+                    this,
+                    "Select Pokemon",
+                    "Customized Dialog",
+                    JOptionPane.PLAIN_MESSAGE,
+                    new ImageIcon("src/Icon/pokeball.png"),
+                    possibilities,
+                    tim.get(0).getNama());
+        if(s.equals(tim.get(0).getNama())){
+            tim.get(0).getNama();
+        }else if(s.equals(tim.get(1).getNama())){
+            tim.get(1).getNama();
+        }else if(s.equals(tim.get(2).getNama())){
+            tim.get(2).getNama();
+        }
     }//GEN-LAST:event_ultActionPerformed
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed

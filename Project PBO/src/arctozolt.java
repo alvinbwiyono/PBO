@@ -29,7 +29,11 @@ public class arctozolt extends Pokemon implements Ulti{
 
     @Override
     public void ult() {
-        
+        if(Battle.getTurn()==0){
+            Battle.setEnemystun(Battle.getEnemystun()+4);
+        }else{
+            Battle.setAllystun(Battle.getAllystun()+4);
+        }
     }
     
 }

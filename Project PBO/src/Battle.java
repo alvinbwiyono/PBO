@@ -26,20 +26,23 @@ public class Battle extends javax.swing.JFrame {
      */
     private static ArrayList<Pokemon> musuh=new ArrayList<>();
     private static ArrayList<Pokemon> tim=new ArrayList<>();
-    private static int jmlultially=1;    
-    private static int jmlultienemy=1;    
-    private static int cooldownbutton=0;
-    private static int cooldownenemy=0;
-    private static int turn=0;
-    private static int enemystun=0;
-    private static int allystun=0;
-    private static int allypoison=0;
-    private static int enemypoison=0;
-    private static int ultenemypoison=0;
-    private static int ultallypoison=0;
-    private static int dmgpoison[]=new int[2];
+    private static int jmlultially;    
+    private static int jmlultienemy;    
+    private static int cooldownbutton;
+    private static int cooldownenemy;
+    private static int turn;
+    private static int enemystun;
+    private static int allystun;
+    private static int allypoison;
+    private static int enemypoison;
+    private static int enemypermapoison;
+    private static int allypermapoison;
+    private static int allydmgreduc;
+    private static int enemydmgreduc;
+    private static int ultenemypoison;
+    private static int ultallypoison;
+    private static int dmgpoison[];
     private Timer t=null;
-    private static int pil=-1;
     public Battle() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -58,6 +61,24 @@ public class Battle extends javax.swing.JFrame {
         }else if(Arena.pilArena==3){
             icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg9.jpg"));
         }
+        
+        // Reset data
+        jmlultially=1;
+        jmlultienemy=1;
+        cooldownbutton=0;
+        cooldownenemy=0;
+        turn=0;
+        enemystun=0;
+        allystun=0;
+        allypoison=0;
+        enemypoison=0;
+        enemypermapoison=0;
+        allypermapoison=0;
+        allydmgreduc=0;
+        enemydmgreduc=0;
+        ultenemypoison=0;
+        ultallypoison=0;
+        dmgpoison=new int[2];
         arena.setIcon(icon);
         tim.clear();
         // Untuk Clone Lobby.teams 
@@ -301,7 +322,7 @@ public class Battle extends javax.swing.JFrame {
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        String[] possibilities = {null,null,null};
+        String[] possibilities = new String[tim.size()];
         for (int i = 0; i < tim.size(); i++) {
             possibilities[i]=tim.get(i).getNama();
         }
@@ -314,12 +335,30 @@ public class Battle extends javax.swing.JFrame {
                     possibilities,
                     tim.get(0).getNama());
         if(s.equals(tim.get(0).getNama())){
-            tim.get(0).getNama();
+            tim.get(0).ult();
+            jmlultially=0;
+            ult.setEnabled(false);
         }else if(s.equals(tim.get(1).getNama())){
-            tim.get(1).getNama();
+            tim.get(1).ult();
+            jmlultially=0;
+            ult.setEnabled(false);
         }else if(s.equals(tim.get(2).getNama())){
-            tim.get(2).getNama();
+            tim.get(2).ult();
+            jmlultially=0;
+            ult.setEnabled(false);
         }
+        turn++;
+        updatehealth();
+        cekmenang();
+        if(enemystun==0){
+            gerakmusuh();
+        }
+        cekstun();
+        turn--;
+        cekpoison();
+        updatehealth();
+        cekmenang();
+        cekbutton();
     }//GEN-LAST:event_ultActionPerformed
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
@@ -342,40 +381,37 @@ public class Battle extends javax.swing.JFrame {
         cekbutton();
     }//GEN-LAST:event_skilActionPerformed
     
-    public void ultigerak(){
-        if(pil!=-1){
-            jmlultially=0;
-            ult.setEnabled(false);
-        }
-        if(pil==0){
-            tim.get(0).ult();
-        }else if(pil==1){
-            tim.get(1).ult();
-        }else if(pil==2){
-            tim.get(2).ult();
-        }
-        turn++;
-        updatehealth();
-        cekmenang();
-        if(enemystun==0){
-            gerakmusuh();
-        }
-        turn--;
-        cekpoison();
-        updatehealth();
-        cekmenang();
-        cekbutton();
-    }
     private static void cekpoison(){
         if(allypoison>0){
-            musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]);
+            if(enemydmgreduc==1){
+                musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]/2);
+            }else{
+                musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]);
+            }
             allypoison--;
         }
+        if(allypermapoison==0){
+            if(enemydmgreduc==1){
+                musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]/2);
+            }else{
+                musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]);
+            }
+        }
         if(enemypoison>0){
-            tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]);
+            if(allydmgreduc==1){
+                tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]/2);
+            }else{
+                tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]);
+            }
             enemypoison--;
         }
-        
+        if(enemypermapoison==0){
+            if(allydmgreduc==1){
+                tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]/2);
+            }else{
+                tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]);
+            }
+        }
     }
     
     private void gerakmusuh(){
@@ -383,6 +419,8 @@ public class Battle extends javax.swing.JFrame {
         int pil=rand.nextInt(3);
         if(pil==2&&jmlultienemy==1&&musuh.get(0).cekdarah()){
             jmlultienemy=0;
+            int idx=rand.nextInt(musuh.size());
+            musuh.get(idx).ult();
         }else if(pil==2){
             pil--;
         }
@@ -412,12 +450,14 @@ public class Battle extends javax.swing.JFrame {
     private void cekmenang(){
         if(tim.get(0).getCurrHealth()<=0){
             tim.remove(0);
+            enemypermapoison=0;
+            allydmgreduc=0;
             if(tim.size()==0){
                 Sound.lose();
-//                JOptionPane.showMessageDialog(this, "You Lose");
+                JOptionPane.showMessageDialog(this, "You Lose");
                 Menu next=new Menu();
                 next.setVisible(true);
-                
+                dispose();
             }else{
                 updatepokemon();
             }
@@ -425,12 +465,14 @@ public class Battle extends javax.swing.JFrame {
         try{
             if(musuh.get(0).getCurrHealth()<=0){
                 musuh.remove(0);
+                allypermapoison=0;
+                enemydmgreduc=0;
                 if(musuh.size()==0){
                     Sound.win();
-//                    JOptionPane.showMessageDialog(this, "You Win");
+                    JOptionPane.showMessageDialog(this, "You Win");
                     Menu next=new Menu();
                     next.setVisible(true);
-                    
+                    dispose();
                 }else{
                     updatepokemon();
                 }
@@ -469,6 +511,32 @@ public class Battle extends javax.swing.JFrame {
         }
     }
 
+    public static void setEnemypermapoison(int enemypermapoison) {
+        Battle.enemypermapoison = enemypermapoison;
+    }
+
+    public static void setAllypermapoison(int allypermapoison) {
+        Battle.allypermapoison = allypermapoison;
+    }
+
+    public static int getAllydmgreduc() {
+        return allydmgreduc;
+    }
+
+    public static void setAllydmgreduc(int allydmgreduc) {
+        Battle.allydmgreduc = allydmgreduc;
+    }
+
+    public static int getEnemydmgreduc() {
+        return enemydmgreduc;
+    }
+
+    public static void setEnemydmgreduc(int enemydmgreduc) {
+        Battle.enemydmgreduc = enemydmgreduc;
+    }
+
+    
+
     public static int getUltenemypoison() {
         return ultenemypoison;
     }
@@ -488,8 +556,7 @@ public class Battle extends javax.swing.JFrame {
     public static void setDmgpoison(int idx,int dmg) {
         dmgpoison[idx]=dmg;
     }
-    
-    
+   
     public static Pokemon getMusuh() {
         return musuh.get(0);
     }
@@ -540,11 +607,6 @@ public class Battle extends javax.swing.JFrame {
     public static void setEnemypoison(int enemypoison) {
         Battle.enemypoison = enemypoison;
     }
-
-    public static void setPil(int pil1) {
-        pil = pil1;
-    }
-    
     
     
     

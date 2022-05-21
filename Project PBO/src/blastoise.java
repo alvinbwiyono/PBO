@@ -25,7 +25,13 @@ public class blastoise extends Pokemon implements Ulti{
     // dmg +100% , dmg reduc +50%
     @Override
     public void ult() {
-        
+        if(Battle.getTurn()==0){
+            Battle.getTim().setDamage(Battle.getTim().getDamage()*2);
+            Battle.setAllydmgreduc(1);
+        }else{
+            Battle.getMusuh().setDamage(Battle.getMusuh().getDamage()*2);
+            Battle.setEnemydmgreduc(1);
+        }
     }
 
 }

@@ -18,19 +18,38 @@ public class braviary extends Pokemon implements Ulti{
     @Override
     public void skill() {
         if(Battle.getTurn()==0){
-            Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(Battle.getMusuh().getCurrHealth()*15)/100);
+            int x=(Battle.getMusuh().getCurrHealth()*15)/100;
+            if(Battle.getEnemydmgreduc()==1){
+                Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(x/2));
+            }else{
+                Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-x);
+            }
         }else{
-            Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(Battle.getTim().getCurrHealth()*15)/100);
+            int x=(Battle.getTim().getCurrHealth()*15)/100;
+            if(Battle.getAllydmgreduc()==1){
+                Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(x/2));
+            }else{
+                Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-x);
+            }
         }
     }
     // 30% enemy currhp
     @Override
     public void ult() {
         if(Battle.getTurn()==0){
-            Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(Battle.getMusuh().getCurrHealth()*30)/100);
+            int x=(Battle.getMusuh().getCurrHealth()*30)/100;
+            if(Battle.getEnemydmgreduc()==1){
+                Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(x/2));
+            }else{
+                Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-x);
+            }
         }else{
-            Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(Battle.getTim().getCurrHealth()*30)/100);
-        }
-    }
+            int x=(Battle.getTim().getCurrHealth()*30)/100;
+            if(Battle.getAllydmgreduc()==1){
+                Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(x/2));
+            }else{
+                Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-x);
+            }
+        }    }
     
 }

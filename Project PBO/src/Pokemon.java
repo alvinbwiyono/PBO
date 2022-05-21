@@ -77,6 +77,9 @@ public abstract class Pokemon implements Serializable, Cloneable,Ulti{
 
     @Override
     public abstract void ult();
-    
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
     
 }

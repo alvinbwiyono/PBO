@@ -48,7 +48,7 @@ public class pika extends Pokemon implements Ulti{
             // Pengurangan 15% HP
             int x=(Battle.getTim().getCurrHealth()*15)/100;
             if(Battle.getAllydmgreduc()==1){
-                Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(x/2));
+                   Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(x/2));
             }else{
                 Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-x);
             }

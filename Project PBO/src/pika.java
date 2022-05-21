@@ -9,8 +9,9 @@
  */
 public class pika extends Pokemon implements Ulti{
     //MAGICAL (Skill)(Poisoned)
+   
     public pika() {
-        super(90, 2);
+        super(90, 2,"Pikachu");
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
     }
 
@@ -31,5 +32,4 @@ public class pika extends Pokemon implements Ulti{
     public void ult() {
         
     }
-    
 }

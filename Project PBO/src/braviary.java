@@ -9,8 +9,9 @@
  */
 public class braviary extends Pokemon implements Ulti{
     //ATTACKER (Basic attack)
+   
     public braviary() {
-        super(90, 6);
+        super(90, 6,"Braviary");
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
     }
     // 15% enemy currhp
@@ -31,6 +32,5 @@ public class braviary extends Pokemon implements Ulti{
             Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(Battle.getTim().getCurrHealth()*30)/100);
         }
     }
-    
     
 }

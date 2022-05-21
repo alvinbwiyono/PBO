@@ -12,8 +12,9 @@ import javax.swing.ImageIcon;
  */
     public class articuno extends Pokemon implements Ulti{
     //HEALER
+   
     public articuno() {
-        super(110, 2);
+        super(110, 2, "Articuno");
         gambar = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
     }
     
@@ -31,5 +32,5 @@ import javax.swing.ImageIcon;
     public void ult() {
         
     }
-    
-   }
+   
+}

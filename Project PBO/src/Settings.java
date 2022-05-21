@@ -2,8 +2,6 @@
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 
 /*
@@ -29,7 +27,7 @@ public class Settings extends javax.swing.JFrame {
         this.setTitle("Settings");
         this.setSize(513,335);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
@@ -93,7 +91,7 @@ public class Settings extends javax.swing.JFrame {
         });
         getContentPane().add(L3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, 39));
 
-        LMute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lmute.png"))); // NOI18N
+        LMute.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/lmute.png"))); // NOI18N
         LMute.setBorder(null);
         LMute.setBorderPainted(false);
         LMute.setContentAreaFilled(false);
@@ -105,7 +103,7 @@ public class Settings extends javax.swing.JFrame {
         });
         getContentPane().add(LMute, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 60, 60));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsbackground.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/settingsbackground.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
 
         pack();

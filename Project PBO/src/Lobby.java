@@ -15,7 +15,6 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
@@ -47,7 +46,7 @@ public class Lobby extends javax.swing.JFrame {
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
@@ -91,7 +90,7 @@ public class Lobby extends javax.swing.JFrame {
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2  - this.getSize().width / 2;
@@ -153,7 +152,6 @@ public class Lobby extends javax.swing.JFrame {
 
         play.setBackground(new java.awt.Color(255, 255, 0));
         play.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        play.setForeground(new java.awt.Color(0, 0, 0));
         play.setText("PLAY");
         play.setFocusPainted(false);
         play.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +163,6 @@ public class Lobby extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(51, 153, 255));
         jButton3.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("INFO");
         jButton3.setFocusPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +173,7 @@ public class Lobby extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 90, 30));
 
         Setting.setFont(new java.awt.Font("Square721 Cn BT", 1, 14)); // NOI18N
-        Setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sett.png"))); // NOI18N
+        Setting.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/sett.png"))); // NOI18N
         Setting.setToolTipText("");
         Setting.setAutoscrolls(true);
         Setting.setBorder(null);
@@ -200,7 +197,7 @@ public class Lobby extends javax.swing.JFrame {
         });
         getContentPane().add(Exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 90, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon-center (1).gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/pokemon-center (1).gif"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -20, 870, 540));
 
         jLabel2.setText("jLabel2");
@@ -214,7 +211,7 @@ public class Lobby extends javax.swing.JFrame {
         Sound.soundbutton();
         JTextPane jtp = new JTextPane();
         Document doc = jtp.getDocument();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         try {
             doc.insertString(doc.getLength(), "Created By : \n"
                     + "221116935 - ALDI AFENDIYANTO\n"
@@ -236,7 +233,7 @@ public class Lobby extends javax.swing.JFrame {
 
     private void Exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit1ActionPerformed
         // TODO add your handling code here:
-        ImageIcon img=new ImageIcon("src/Pokeball.png");
+        ImageIcon img=new ImageIcon("src/Icon/Pokeball.png");
         Sound.soundbutton();
         String[] options = new String[2];
         options[0] = "Cancel";

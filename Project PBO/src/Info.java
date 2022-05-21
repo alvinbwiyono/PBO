@@ -1,8 +1,4 @@
 
-import java.awt.Color;
-import static java.awt.Color.blue;
-import static java.awt.Color.green;
-import static java.awt.Color.red;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.Icon;
@@ -29,7 +25,7 @@ public class Info extends javax.swing.JFrame {
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
@@ -84,6 +80,7 @@ public class Info extends javax.swing.JFrame {
         articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
         articuno.setBorderPainted(false);
         articuno.setFocusPainted(false);
+        articuno.setFocusable(false);
         articuno.setOpaque(false);
         articuno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +93,7 @@ public class Info extends javax.swing.JFrame {
         blastoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
         blastoise.setBorderPainted(false);
         blastoise.setFocusPainted(false);
+        blastoise.setFocusable(false);
         blastoise.setOpaque(false);
         blastoise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +106,7 @@ public class Info extends javax.swing.JFrame {
         braviary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
         braviary.setBorderPainted(false);
         braviary.setFocusPainted(false);
+        braviary.setFocusable(false);
         braviary.setOpaque(false);
         braviary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +199,7 @@ public class Info extends javax.swing.JFrame {
         ulti.setText("ULTI : ");
         getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
 
-        pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         pokeball.setBorderPainted(false);
         pokeball.setContentAreaFilled(false);
         pokeball.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +217,7 @@ public class Info extends javax.swing.JFrame {
         HP1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(HP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 80, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg9.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bg9.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();

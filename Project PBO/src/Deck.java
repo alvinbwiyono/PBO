@@ -1,7 +1,6 @@
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,7 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -34,7 +32,7 @@ public class Deck extends javax.swing.JFrame {
         this.setTitle("Battle Pokemon");
         this.setSize(813, 535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         // membuat titik x dan y
         int x = layar.width / 2 - this.getSize().width / 2;

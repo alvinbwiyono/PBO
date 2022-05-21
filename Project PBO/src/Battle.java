@@ -1,13 +1,10 @@
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -29,10 +26,10 @@ public class Battle extends javax.swing.JFrame {
      */
     private static ArrayList<Pokemon> musuh=new ArrayList<>();
     private static ArrayList<Pokemon> tim=new ArrayList<>();
-    private int jmlultially=1;    
-    private int jmlultienemy=1;    
-    private int cooldownbutton=0;
-    private int cooldownenemy=0;
+    private static int jmlultially=1;    
+    private static int jmlultienemy=1;    
+    private static int cooldownbutton=0;
+    private static int cooldownenemy=0;
     private static int turn=0;
     private static int enemystun=0;
     private static int allystun=0;
@@ -42,23 +39,24 @@ public class Battle extends javax.swing.JFrame {
     private static int ultallypoison=0;
     private static int dmgpoison[]=new int[2];
     private Timer t=null;
+    private static int pil=-1;
     public Battle() {
         initComponents();
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
         
-        Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));;
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg7.jpg"));;
         if(Arena.pilArena==2){
-            icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
+            icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg5.jpg"));
         }else if(Arena.pilArena==3){
-            icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
+            icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg9.jpg"));
         }
         arena.setIcon(icon);
         tim.clear();
@@ -262,7 +260,7 @@ public class Battle extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void updatehealth(){
+    private static void updatehealth(){
         try{
             AllyHealth.setValue(tim.get(0).getCurrHealth());
             EnemyHealth.setValue(musuh.get(0).getCurrHealth());
@@ -307,9 +305,7 @@ public class Battle extends javax.swing.JFrame {
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        jmlultially=0;
-        ult.setEnabled(false);
-        
+        new MenuUlti().setVisible(true);
     }//GEN-LAST:event_ultActionPerformed
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
@@ -324,6 +320,7 @@ public class Battle extends javax.swing.JFrame {
         if(enemystun==0){
             gerakmusuh();
         }
+        cekstun();
         turn--;
         cekpoison();
         updatehealth();
@@ -331,7 +328,31 @@ public class Battle extends javax.swing.JFrame {
         cekbutton();
     }//GEN-LAST:event_skilActionPerformed
     
-    private void cekpoison(){
+    public void ultigerak(){
+        if(pil!=-1){
+            jmlultially=0;
+            ult.setEnabled(false);
+        }
+        if(pil==0){
+            tim.get(0).ult();
+        }else if(pil==1){
+            tim.get(1).ult();
+        }else if(pil==2){
+            tim.get(2).ult();
+        }
+        turn++;
+        updatehealth();
+        cekmenang();
+        if(enemystun==0){
+            gerakmusuh();
+        }
+        turn--;
+        cekpoison();
+        updatehealth();
+        cekmenang();
+        cekbutton();
+    }
+    private static void cekpoison(){
         if(allypoison>0){
             musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]);
             allypoison--;
@@ -379,10 +400,10 @@ public class Battle extends javax.swing.JFrame {
             tim.remove(0);
             if(tim.size()==0){
                 Sound.lose();
-                JOptionPane.showMessageDialog(this, "You Lose");
+//                JOptionPane.showMessageDialog(this, "You Lose");
                 Menu next=new Menu();
                 next.setVisible(true);
-                this.dispose();
+                
             }else{
                 updatepokemon();
             }
@@ -392,10 +413,10 @@ public class Battle extends javax.swing.JFrame {
                 musuh.remove(0);
                 if(musuh.size()==0){
                     Sound.win();
-                    JOptionPane.showMessageDialog(this, "You Win");
+//                    JOptionPane.showMessageDialog(this, "You Win");
                     Menu next=new Menu();
                     next.setVisible(true);
-                    this.dispose();
+                    
                 }else{
                     updatepokemon();
                 }
@@ -420,6 +441,8 @@ public class Battle extends javax.swing.JFrame {
         try{
             if(tim.get(0).cekdarah()&&jmlultially==1){
                 ult.setEnabled(true);
+            }else{
+                ult.setEnabled(false);
             }
         } catch (IndexOutOfBoundsException ex){
             
@@ -503,6 +526,10 @@ public class Battle extends javax.swing.JFrame {
     public static void setEnemypoison(int enemypoison) {
         Battle.enemypoison = enemypoison;
     }
+
+    public static void setPil(int pil1) {
+        pil = pil1;
+    }
     
     
     
@@ -543,18 +570,18 @@ public class Battle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar AllyHealth;
-    private javax.swing.JProgressBar EnemyHealth;
-    private javax.swing.JLabel ally;
+    private static javax.swing.JProgressBar AllyHealth;
+    private static javax.swing.JProgressBar EnemyHealth;
+    private static javax.swing.JLabel ally;
     private javax.swing.JLabel arena;
     private javax.swing.JButton atk;
-    private javax.swing.JLabel enemy;
+    private static javax.swing.JLabel enemy;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JButton skil;
-    private javax.swing.JButton ult;
+    private static javax.swing.JButton skil;
+    private static javax.swing.JButton ult;
     // End of variables declaration//GEN-END:variables
 }

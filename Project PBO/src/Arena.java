@@ -23,13 +23,13 @@ public class Arena extends javax.swing.JFrame {
         this.setTitle("Battle Pokemon");
         this.setSize(813,535);
         Dimension layar = Toolkit.getDefaultToolkit().getScreenSize();
-        ImageIcon img = new ImageIcon("src/Pokeball.png");
+        ImageIcon img = new ImageIcon("src/Icon/Pokeball.png");
         this.setIconImage(img.getImage());
         int x = layar.width / 2  - this.getSize().width / 2;
         int y = layar.height / 2 - this.getSize().height / 2;
 
         this.setLocation(x, y);
-        Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg7.jpg"));
         arena.setIcon(icon);
         previous.setVisible(false);
         pilArena=1;
@@ -102,7 +102,7 @@ public class Arena extends javax.swing.JFrame {
         });
         getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
 
-        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke1.setBorderPainted(false);
         Poke1.setContentAreaFilled(false);
         Poke1.setFocusPainted(false);
@@ -113,7 +113,7 @@ public class Arena extends javax.swing.JFrame {
         });
         getContentPane().add(Poke1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 140, 120));
 
-        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke2.setBorderPainted(false);
         Poke2.setContentAreaFilled(false);
         Poke2.setFocusPainted(false);
@@ -124,7 +124,7 @@ public class Arena extends javax.swing.JFrame {
         });
         getContentPane().add(Poke2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 140, 120));
 
-        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke3.setBorderPainted(false);
         Poke3.setContentAreaFilled(false);
         Poke3.setFocusPainted(false);
@@ -135,7 +135,7 @@ public class Arena extends javax.swing.JFrame {
         });
         getContentPane().add(Poke3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 140, 120));
 
-        arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
+        arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bg7.jpg"))); // NOI18N
         getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, 540));
 
         pack();
@@ -192,26 +192,26 @@ public class Arena extends javax.swing.JFrame {
     }//GEN-LAST:event_startActionPerformed
     
     private Icon bgArena(){
-        Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+        Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg7.jpg"));
         if(pilArena==1){
-            icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+            icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg7.jpg"));
         }else if(pilArena==2){
-            icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
+            icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg5.jpg"));
         }else if(pilArena==3){
-            icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
+            icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg9.jpg"));
         }
         return icon;
     }
     
     private void gambarArena(){
         if(pilArena==1){
-            Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg7.jpg"));
+            Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg7.jpg"));
             arena.setIcon(icon);
         }else if(pilArena==2){
-            Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg5.jpg"));
+            Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg5.jpg"));
             arena.setIcon(icon);
         }else if(pilArena==3){
-            Icon icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
+            Icon icon = new javax.swing.ImageIcon(getClass().getResource("Background/bg9.jpg"));
             arena.setIcon(icon);
         }
     }

@@ -424,13 +424,14 @@ public class Battle extends javax.swing.JFrame {
         }else if(pil==2){
             pil--;
         }
-        if(pil==1&&cooldownenemy==0){
-            musuh.get(0).skill();
-            cooldownenemy=5;
-        }else if(pil==1){
-            pil--;
-        }
+        
         try {
+                if(pil==1&&cooldownenemy==0){
+                musuh.get(0).skill();
+                cooldownenemy=5;
+            }else if(pil==1){
+                pil--;
+        }
             if(pil==0){
                 tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-musuh.get(0).getDamage());
             }

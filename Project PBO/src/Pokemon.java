@@ -41,7 +41,7 @@ public abstract class Pokemon implements Serializable, Cloneable{
         return damage;
     }
     
-    public abstract int skill();
+    public abstract void skill();
 
     public int Attack(){
         Random rand=new Random();

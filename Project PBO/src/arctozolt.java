@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
  * @author Aldiaafn
  */
 public class arctozolt extends Pokemon implements Ulti{
-    
+    private int turn=0;
     public arctozolt() {
         // Stun (Skill 2 Ulti 4)
         super(95,5);
@@ -19,13 +19,17 @@ public class arctozolt extends Pokemon implements Ulti{
     }
 
     @Override
-    public int skill() {
-        return 0;
+    public void skill() {
+        if(Battle.getTurn()==0){
+            Battle.setEnemystun(Battle.getEnemystun()+2);
+        }else{
+            Battle.setAllystun(Battle.getAllystun()+2);
+        }
     }
 
     @Override
-    public int ult() {
-        return 0;
+    public void ult() {
+        
     }
     
 }

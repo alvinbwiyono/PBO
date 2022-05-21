@@ -8,5 +8,5 @@
  * @author Aldiaafn
  */
 public interface Ulti {
-    int ult();
+    void ult();
 }

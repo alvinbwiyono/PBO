@@ -15,13 +15,21 @@ public class braviary extends Pokemon implements Ulti{
     }
     // 15% enemy currhp
     @Override
-    public int skill() {
-        return 0;
+    public void skill() {
+        if(Battle.getTurn()==0){
+            Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(Battle.getMusuh().getCurrHealth()*15)/100);
+        }else{
+            Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(Battle.getTim().getCurrHealth()*15)/100);
+        }
     }
     // 30% enemy currhp
     @Override
-    public int ult() {
-        return 0;
+    public void ult() {
+        if(Battle.getTurn()==0){
+            Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-(Battle.getMusuh().getCurrHealth()*30)/100);
+        }else{
+            Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-(Battle.getTim().getCurrHealth()*30)/100);
+        }
     }
     
     

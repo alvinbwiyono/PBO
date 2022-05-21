@@ -16,13 +16,20 @@ public class pika extends Pokemon implements Ulti{
 
     // 3 turn 100%
     @Override
-    public int skill() {
-        return 0;
+    public void skill() {
+        if(Battle.getTurn()==0){
+            Battle.setAllypoison(Battle.getAllypoison()+3);
+            Battle.setDmgpoison(0,this.damage*2);
+        }else{
+            Battle.setEnemypoison(Battle.getEnemypoison()+3);
+            Battle.setDmgpoison(1,this.damage*2);
+        }
     }
     
     // permanen poison 100% 15% enemy currhp
     @Override
-    public int ult() {
-        return 0;
+    public void ult() {
+        
     }
+    
 }

@@ -1,6 +1,9 @@
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
@@ -8,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -23,12 +27,21 @@ public class Battle extends javax.swing.JFrame {
     /**
      * Creates new form Battle
      */
-    ArrayList<Pokemon> musuh=new ArrayList<>();
-    ArrayList<Pokemon> tim=new ArrayList<>();
-    int jmlultially=1;    
-    int jmlultienemy=1;    
-    int cooldownbutton=0;
-    int cooldownenemy=0;
+    private static ArrayList<Pokemon> musuh=new ArrayList<>();
+    private static ArrayList<Pokemon> tim=new ArrayList<>();
+    private int jmlultially=1;    
+    private int jmlultienemy=1;    
+    private int cooldownbutton=0;
+    private int cooldownenemy=0;
+    private static int turn=0;
+    private static int enemystun=0;
+    private static int allystun=0;
+    private static int allypoison=0;
+    private static int enemypoison=0;
+    private static int ultenemypoison=0;
+    private static int ultallypoison=0;
+    private static int dmgpoison[]=new int[2];
+    private Timer t=null;
     public Battle() {
         initComponents();
         this.setTitle("Battle Pokemon");
@@ -48,6 +61,7 @@ public class Battle extends javax.swing.JFrame {
             icon = new javax.swing.ImageIcon(getClass().getResource("bg9.jpg"));
         }
         arena.setIcon(icon);
+        tim.clear();
         // Untuk Clone Lobby.teams 
         for (int i = 0; i < 3; i++) {
             try {
@@ -104,6 +118,23 @@ public class Battle extends javax.swing.JFrame {
         EnemyHealth.setValue(musuh.get(0).getCurrHealth());
         ally.setIcon(tim.get(0).getGambar());
         enemy.setIcon(musuh.get(0).getGambar());
+        
+        t = new Timer(1000,new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                    atk.setEnabled(false);
+                    skil.setEnabled(false);
+                    ult.setEnabled(false);
+                    gerakmusuh();
+                    updatehealth();
+                    cekmenang();
+                    allystun--;
+                    if(allystun==0){
+                        t.stop();
+                        atk.setEnabled(true);
+                        cekbutton();
+                    }
+                }
+            });
     }
 
     /**
@@ -153,8 +184,11 @@ public class Battle extends javax.swing.JFrame {
         atk.setBackground(new java.awt.Color(255, 0, 51));
         atk.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         atk.setForeground(new java.awt.Color(255, 255, 255));
+        atk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/battle.png"))); // NOI18N
         atk.setBorder(null);
         atk.setBorderPainted(false);
+        atk.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        atk.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
         atk.setFocusable(false);
         atk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,8 +200,11 @@ public class Battle extends javax.swing.JFrame {
         ult.setBackground(new java.awt.Color(255, 255, 0));
         ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ult.setForeground(new java.awt.Color(0, 0, 0));
+        ult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/death.png"))); // NOI18N
         ult.setBorder(null);
         ult.setBorderPainted(false);
+        ult.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        ult.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
         ult.setEnabled(false);
         ult.setFocusable(false);
         ult.addActionListener(new java.awt.event.ActionListener() {
@@ -180,9 +217,11 @@ public class Battle extends javax.swing.JFrame {
         skil.setBackground(new java.awt.Color(102, 204, 0));
         skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skil.setForeground(new java.awt.Color(255, 255, 255));
-        skil.setActionCommand("");
+        skil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/lighting.png"))); // NOI18N
         skil.setBorder(null);
         skil.setBorderPainted(false);
+        skil.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        skil.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
         skil.setFocusable(false);
         skil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,8 +263,13 @@ public class Battle extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void updatehealth(){
-        AllyHealth.setValue(tim.get(0).getCurrHealth());
-        EnemyHealth.setValue(musuh.get(0).getCurrHealth());
+        try{
+            AllyHealth.setValue(tim.get(0).getCurrHealth());
+            EnemyHealth.setValue(musuh.get(0).getCurrHealth());
+        }catch (IndexOutOfBoundsException ex) {
+            
+        }
+        
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -241,24 +285,84 @@ public class Battle extends javax.swing.JFrame {
         // TODO add your handling code here:
         Sound.attack();
         musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-tim.get(0).getDamage());
-        gerakmusuh();
+        turn++;
         updatehealth();
         cekmenang();
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException ex) {
+            
+        }
+        if(enemystun==0){
+            gerakmusuh();
+        }
+        cekstun();
+        turn--;
+        cekpoison();
+        updatehealth();
+        cekmenang();
+        cekbutton();
     }//GEN-LAST:event_atkActionPerformed
 
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
         jmlultially=0;
+        ult.setEnabled(false);
         
     }//GEN-LAST:event_ultActionPerformed
+    
+    private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
+        // TODO add your handling code here:
+        Sound.soundbutton();
+        tim.get(0).skill();
+        cooldownbutton=5;
+        skil.setEnabled(false);
+        turn++;
+        updatehealth();
+        cekmenang();
+        if(enemystun==0){
+            gerakmusuh();
+        }
+        turn--;
+        cekpoison();
+        updatehealth();
+        cekmenang();
+        cekbutton();
+    }//GEN-LAST:event_skilActionPerformed
+    
+    private void cekpoison(){
+        if(allypoison>0){
+            musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]);
+            allypoison--;
+        }
+        if(enemypoison>0){
+            tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]);
+            enemypoison--;
+        }
+        
+    }
     
     private void gerakmusuh(){
         Random rand=new Random();
         int pil=rand.nextInt(3);
-        
-        if(tim.get(0).cekdarah()&&jmlultially==1){
-            ult.setEnabled(true);
+        if(pil==2&&jmlultienemy==1&&musuh.get(0).cekdarah()){
+            jmlultienemy=0;
+        }else if(pil==2){
+            pil--;
+        }
+        if(pil==1&&cooldownenemy==0){
+            musuh.get(0).skill();
+            cooldownenemy=5;
+        }else if(pil==1){
+            pil--;
+        }
+        try {
+            if(pil==0){
+                tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-musuh.get(0).getDamage());
+            }
+        } catch (IndexOutOfBoundsException ex){
+            
         }
     }
     
@@ -274,16 +378,8 @@ public class Battle extends javax.swing.JFrame {
         if(tim.get(0).getCurrHealth()<=0){
             tim.remove(0);
             if(tim.size()==0){
-                
-            }else{
-                updatepokemon();
-            }
-        }
-        if(musuh.get(0).getCurrHealth()<=0){
-            musuh.remove(0);
-            if(musuh.size()==0){
-                Sound.win();
-                JOptionPane.showMessageDialog(this, "You Win");
+                Sound.lose();
+                JOptionPane.showMessageDialog(this, "You Lose");
                 Menu next=new Menu();
                 next.setVisible(true);
                 this.dispose();
@@ -291,13 +387,126 @@ public class Battle extends javax.swing.JFrame {
                 updatepokemon();
             }
         }
+        try{
+            if(musuh.get(0).getCurrHealth()<=0){
+                musuh.remove(0);
+                if(musuh.size()==0){
+                    Sound.win();
+                    JOptionPane.showMessageDialog(this, "You Win");
+                    Menu next=new Menu();
+                    next.setVisible(true);
+                    this.dispose();
+                }else{
+                    updatepokemon();
+                }
+            }
+        } catch (IndexOutOfBoundsException ex){
+            
+        }
+        
+    }
+    private void cekbutton(){
+        if(cooldownbutton==0){
+            skil.setEnabled(true);
+        }else{
+            cooldownbutton--;
+        }
+        if(cooldownenemy>0){
+            cooldownenemy--;
+        }
+        if(enemystun>0){
+            enemystun--;
+        }
+        try{
+            if(tim.get(0).cekdarah()&&jmlultially==1){
+                ult.setEnabled(true);
+            }
+        } catch (IndexOutOfBoundsException ex){
+            
+        }
     }
     
-    private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
-        // TODO add your handling code here:
-        Sound.soundbutton();
-    }//GEN-LAST:event_skilActionPerformed
+    public void cekstun(){
+        if(allystun>0) {
+            t.start();
+        }
+    }
 
+    public static int getUltenemypoison() {
+        return ultenemypoison;
+    }
+
+    public static void setUltenemypoison(int ultenemypoison) {
+        Battle.ultenemypoison = ultenemypoison;
+    }
+
+    public static int getUltallypoison() {
+        return ultallypoison;
+    }
+
+    public static void setUltallypoison(int ultallypoison) {
+        Battle.ultallypoison = ultallypoison;
+    }
+
+    public static void setDmgpoison(int idx,int dmg) {
+        dmgpoison[idx]=dmg;
+    }
+    
+    
+    public static Pokemon getMusuh() {
+        return musuh.get(0);
+    }
+
+    public static Pokemon getTim() {
+        return tim.get(0);
+    }
+    
+    public static ArrayList<Pokemon> getMusuh2() {
+        return musuh;
+    }
+
+    public static ArrayList<Pokemon> getTim2() {
+        return tim;
+    }
+    public static int getTurn() {
+        return turn;
+    }
+
+    public static int getEnemystun() {
+        return enemystun;
+    }
+
+    public static void setEnemystun(int enemystun1) {
+        enemystun = enemystun1;
+    }
+
+    public static int getAllystun() {
+        return allystun;
+    }
+
+    public static void setAllystun(int allystun1) {
+        allystun = allystun1;
+    }
+
+    public static int getAllypoison() {
+        return allypoison;
+    }
+
+    public static void setAllypoison(int allypoison) {
+        Battle.allypoison = allypoison;
+    }
+
+    public static int getEnemypoison() {
+        return enemypoison;
+    }
+
+    public static void setEnemypoison(int enemypoison) {
+        Battle.enemypoison = enemypoison;
+    }
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */

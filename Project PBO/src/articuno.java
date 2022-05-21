@@ -19,14 +19,17 @@ import javax.swing.ImageIcon;
     
     // dmg x5
     @Override
-    public int skill() {
-        return 0;
+    public void skill() {
+        if(Battle.getTurn()==0){
+            Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-Battle.getTim().getDamage()*5);
+        }else{
+            Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-Battle.getMusuh().getDamage()*5);
+        }
     }
     // + 50% current health
     @Override
-    public int ult() {
-        return 0;
+    public void ult() {
+        
     }
-        
-        
+    
    }

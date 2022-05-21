@@ -19,13 +19,13 @@ public class blastoise extends Pokemon implements Ulti{
     
     // 50% 
     @Override
-    public int skill() {
-        return 0;
+    public void skill() {
+        damage+=(damage*50)/100;
     }
     // dmg +100% , dmg reduc +50%
     @Override
-    public int ult() {
-        return 0;
+    public void ult() {
+        
     }
     
 }

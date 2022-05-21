@@ -334,31 +334,35 @@ public class Battle extends javax.swing.JFrame {
                     new ImageIcon("src/Icon/pokeball.png"),
                     possibilities,
                     tim.get(0).getNama());
-        if(s.equals(tim.get(0).getNama())){
+        try{
+            if(s.equals(tim.get(0).getNama())){
             tim.get(0).ult();
             jmlultially=0;
             ult.setEnabled(false);
-        }else if(s.equals(tim.get(1).getNama())){
-            tim.get(1).ult();
-            jmlultially=0;
-            ult.setEnabled(false);
-        }else if(s.equals(tim.get(2).getNama())){
-            tim.get(2).ult();
-            jmlultially=0;
-            ult.setEnabled(false);
+            }else if(s.equals(tim.get(1).getNama())){
+                tim.get(1).ult();
+                jmlultially=0;
+                ult.setEnabled(false);
+            }else if(s.equals(tim.get(2).getNama())){
+                tim.get(2).ult();
+                jmlultially=0;
+                ult.setEnabled(false);
+            }
+            turn++;
+            updatehealth();
+            cekmenang();
+            if(enemystun==0){
+                gerakmusuh();
+            }
+            cekstun();
+            turn--;
+            cekpoison();
+            updatehealth();
+            cekmenang();
+            cekbutton();
+        } catch (NullPointerException ex){
+            
         }
-        turn++;
-        updatehealth();
-        cekmenang();
-        if(enemystun==0){
-            gerakmusuh();
-        }
-        cekstun();
-        turn--;
-        cekpoison();
-        updatehealth();
-        cekmenang();
-        cekbutton();
     }//GEN-LAST:event_ultActionPerformed
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed

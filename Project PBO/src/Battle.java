@@ -394,7 +394,7 @@ public class Battle extends javax.swing.JFrame {
             }
             allypoison--;
         }
-        if(allypermapoison==0){
+        if(allypermapoison==1){
             if(enemydmgreduc==1){
                 musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-dmgpoison[0]/2);
             }else{
@@ -409,7 +409,7 @@ public class Battle extends javax.swing.JFrame {
             }
             enemypoison--;
         }
-        if(enemypermapoison==0){
+        if(enemypermapoison==1){
             if(allydmgreduc==1){
                 tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-dmgpoison[1]/2);
             }else{
@@ -430,7 +430,7 @@ public class Battle extends javax.swing.JFrame {
         }
         
         try {
-                if(pil==1&&cooldownenemy==0){
+            if(pil==1&&cooldownenemy==0){
                 musuh.get(0).skill();
                 cooldownenemy=5;
             }else if(pil==1){

@@ -52,6 +52,8 @@ public class Info extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        skil = new javax.swing.JLabel();
+        ult = new javax.swing.JLabel();
         articuno = new javax.swing.JButton();
         blastoise = new javax.swing.JButton();
         braviary = new javax.swing.JButton();
@@ -76,12 +78,20 @@ public class Info extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        skil.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 370, 20));
+
+        ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ult.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 520, 20));
+
         articuno.setBackground(new java.awt.Color(204, 204, 204));
         articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
         articuno.setBorderPainted(false);
+        articuno.setContentAreaFilled(false);
         articuno.setFocusPainted(false);
         articuno.setFocusable(false);
-        articuno.setOpaque(false);
         articuno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 articunoActionPerformed(evt);
@@ -92,9 +102,9 @@ public class Info extends javax.swing.JFrame {
         blastoise.setBackground(new java.awt.Color(204, 204, 204));
         blastoise.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"))); // NOI18N
         blastoise.setBorderPainted(false);
+        blastoise.setContentAreaFilled(false);
         blastoise.setFocusPainted(false);
         blastoise.setFocusable(false);
-        blastoise.setOpaque(false);
         blastoise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 blastoiseActionPerformed(evt);
@@ -105,9 +115,9 @@ public class Info extends javax.swing.JFrame {
         braviary.setBackground(new java.awt.Color(204, 204, 204));
         braviary.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"))); // NOI18N
         braviary.setBorderPainted(false);
+        braviary.setContentAreaFilled(false);
         braviary.setFocusPainted(false);
         braviary.setFocusable(false);
-        braviary.setOpaque(false);
         braviary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 braviaryActionPerformed(evt);
@@ -119,8 +129,8 @@ public class Info extends javax.swing.JFrame {
         pikachu.setForeground(new java.awt.Color(204, 204, 204));
         pikachu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"))); // NOI18N
         pikachu.setBorderPainted(false);
+        pikachu.setContentAreaFilled(false);
         pikachu.setFocusPainted(false);
-        pikachu.setOpaque(false);
         pikachu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pikachuActionPerformed(evt);
@@ -131,8 +141,8 @@ public class Info extends javax.swing.JFrame {
         arctozolt.setBackground(new java.awt.Color(204, 204, 204));
         arctozolt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"))); // NOI18N
         arctozolt.setBorderPainted(false);
+        arctozolt.setContentAreaFilled(false);
         arctozolt.setFocusPainted(false);
-        arctozolt.setOpaque(false);
         arctozolt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arctozoltActionPerformed(evt);
@@ -192,12 +202,12 @@ public class Info extends javax.swing.JFrame {
         skill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skill.setForeground(new java.awt.Color(255, 255, 255));
         skill.setText("SKILL : ");
-        getContentPane().add(skill, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, -1, -1));
+        getContentPane().add(skill, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
 
         ulti.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ulti.setForeground(new java.awt.Color(255, 255, 255));
-        ulti.setText("ULTI : ");
-        getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, -1, -1));
+        ulti.setText("ULTI    : ");
+        getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
 
         pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         pokeball.setBorderPainted(false);
@@ -240,7 +250,8 @@ public class Info extends javax.swing.JFrame {
         infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
         HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
-        
+        skil.setText("Stun (2 Turn)");
+        ult.setText("Stun (4 Turn)");
     }//GEN-LAST:event_arctozoltActionPerformed
 
     private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
@@ -259,6 +270,8 @@ public class Info extends javax.swing.JFrame {
         infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
         HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
+        skil.setText("Damage (500% Attack)");
+        ult.setText("Heal (50% Current Hp)");
     }//GEN-LAST:event_articunoActionPerformed
 
     private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
@@ -277,6 +290,8 @@ public class Info extends javax.swing.JFrame {
         infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
         HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
+        skil.setText("Buff + (50% Attack)");
+        ult.setText("Buff + (100% Attack + 50% Damage Reductions)");
     }//GEN-LAST:event_blastoiseActionPerformed
 
     private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
@@ -295,6 +310,8 @@ public class Info extends javax.swing.JFrame {
         infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
         HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
+        skil.setText("Damage (15% Enemy Current Hp)");
+        ult.setText("Damage (30% Enemy Current Hp)");
     }//GEN-LAST:event_braviaryActionPerformed
 
     private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
@@ -313,6 +330,8 @@ public class Info extends javax.swing.JFrame {
         infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
         HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
+        skil.setText("Poison (100% Attack For 3 Turn)");
+        ult.setText("Poison (100% Attack Until Enemy Killed + 15% Enemy Current Hp)");
     }//GEN-LAST:event_pikachuActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -380,8 +399,10 @@ public class Info extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JButton pikachu;
     private javax.swing.JButton pokeball;
+    private javax.swing.JLabel skil;
     private javax.swing.JLabel skill;
     private javax.swing.JLabel stats;
+    private javax.swing.JLabel ult;
     private javax.swing.JLabel ulti;
     // End of variables declaration//GEN-END:variables
 }

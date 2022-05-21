@@ -265,7 +265,72 @@ public class Sound {
         volume.setValue(-10f);
         clip.start();
     } 
+    ///sfx skill
+    public static void skl(){
+        f = new File("src/sound/sfx/skil.wav");
+        try {
+            audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
+        } catch (FileNotFoundException ex){
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            clip.open(audioIn);
+        } catch (NullPointerException ex){ 
+             
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        volume.setValue(-20f);
+        clip.start();
+    } 
     
-
+    ///sfx ult
+    public static void ulti(){
+        f = new File("src/sound/sfx/ulti.wav");
+        try {
+            audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
+        } catch (FileNotFoundException ex){
+            
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            clip = AudioSystem.getClip();
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            clip.open(audioIn);
+        } catch (NullPointerException ex){ 
+             
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+        volume.setValue(-8f);
+        clip.start();
+    } 
 }
 

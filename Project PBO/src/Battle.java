@@ -321,7 +321,7 @@ public class Battle extends javax.swing.JFrame {
 
     private void ultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ultActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.ulti();
         String[] possibilities = new String[tim.size()];
         for (int i = 0; i < tim.size(); i++) {
             possibilities[i]=tim.get(i).getNama();
@@ -367,7 +367,7 @@ public class Battle extends javax.swing.JFrame {
     
     private void skilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skilActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.skl();
         tim.get(0).skill();
         cooldownbutton=5;
         skil.setEnabled(false);

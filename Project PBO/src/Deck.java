@@ -348,7 +348,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void BraviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BraviaryActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.chsp();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
 
         int btn = getIndex();
@@ -371,7 +371,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void ArticunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArticunoActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.chsp();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
 
         int btn = getIndex();
@@ -394,7 +394,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void BlastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlastoiseActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.chsp();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
 
         int btn = getIndex();
@@ -417,7 +417,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void PikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PikachuActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.chsp();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
 
         int btn = getIndex();
@@ -440,7 +440,7 @@ public class Deck extends javax.swing.JFrame {
 
     private void ArctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArctozoltActionPerformed
         // TODO add your handling code here:
-        Sound.soundbutton();
+        Sound.chsp();
         ImageIcon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
 
         int btn = getIndex();

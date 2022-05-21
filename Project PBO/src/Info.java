@@ -238,7 +238,8 @@ public class Info extends javax.swing.JFrame {
         skill.setVisible(true);
         ulti.setVisible(true);
         cet=new arctozolt();
-        HP1.setText("HP : "+cet.getMaxHealth());
+        infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
+        HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
         
     }//GEN-LAST:event_arctozoltActionPerformed
@@ -256,7 +257,8 @@ public class Info extends javax.swing.JFrame {
         skill.setVisible(true);
         ulti.setVisible(true);
         cet=new articuno();
-        HP1.setText("HP : "+cet.getMaxHealth());
+        infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
+        HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_articunoActionPerformed
 
@@ -273,7 +275,8 @@ public class Info extends javax.swing.JFrame {
         skill.setVisible(true);
         ulti.setVisible(true);
         cet=new blastoise();
-        HP1.setText("HP : "+cet.getMaxHealth());
+        infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
+        HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_blastoiseActionPerformed
 
@@ -290,7 +293,8 @@ public class Info extends javax.swing.JFrame {
         skill.setVisible(true);
         ulti.setVisible(true);
         cet=new braviary();
-        HP1.setText("HP : "+cet.getMaxHealth());
+        infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
+        HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_braviaryActionPerformed
 
@@ -307,7 +311,8 @@ public class Info extends javax.swing.JFrame {
         skill.setVisible(true);
         ulti.setVisible(true);
         cet=new pika();
-        HP1.setText("HP : "+cet.getMaxHealth());
+        infopokemon<Integer> iObj = new infopokemon<Integer>(cet.getMaxHealth());
+        HP1.setText("HP : "+iObj.getCetak());
         ATTACK.setText("Attack : "+cet.getDamage());
     }//GEN-LAST:event_pikachuActionPerformed
 

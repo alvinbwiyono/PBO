@@ -196,7 +196,7 @@ public class Deck extends javax.swing.JFrame {
         });
         getContentPane().add(Load, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, -1, -1));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg7.jpg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bg7.jpg"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();

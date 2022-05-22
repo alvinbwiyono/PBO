@@ -230,7 +230,7 @@ public class Info extends javax.swing.JFrame {
     
     
     private void arctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arctozoltActionPerformed
-        Sound.soundbutton();
+        Sound.chsp();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);

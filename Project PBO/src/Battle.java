@@ -280,7 +280,7 @@ public class Battle extends javax.swing.JFrame {
         AllyHealth.setStringPainted(true);
         getContentPane().add(AllyHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
 
-        arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg5.jpg"))); // NOI18N
+        arena.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bg5.jpg"))); // NOI18N
         getContentPane().add(arena, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();

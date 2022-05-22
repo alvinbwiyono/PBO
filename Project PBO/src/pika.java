@@ -19,9 +19,11 @@ public class pika extends Pokemon implements Ulti{
     @Override
     public void skill() {
         if(Battle.getTurn()==0){
+            // Turn Ally
             Battle.setAllypoison(Battle.getAllypoison()+3);
             Battle.setDmgpoison(0,this.damage*2);
         }else{
+            // Turn Musuh
             Battle.setEnemypoison(Battle.getEnemypoison()+3);
             Battle.setDmgpoison(1,this.damage*2);
         }
@@ -31,6 +33,7 @@ public class pika extends Pokemon implements Ulti{
     @Override
     public void ult() {
         if(Battle.getTurn()==0){
+            // Ini Turn Ally
             Battle.setAllypermapoison(1);
             Battle.setDmgpoison(0,this.damage*2);
             
@@ -42,6 +45,7 @@ public class pika extends Pokemon implements Ulti{
                 Battle.getMusuh().setCurrHealth(Battle.getMusuh().getCurrHealth()-x);
             }
         }else{
+            // Ini Turn Musuh
             Battle.setEnemypermapoison(1);
             Battle.setDmgpoison(1,this.damage*2);
             

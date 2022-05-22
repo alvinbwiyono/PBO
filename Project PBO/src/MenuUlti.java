@@ -30,23 +30,23 @@ public class MenuUlti extends javax.swing.JFrame {
 
         this.setLocation(x, y);
         
-        for (int i = 0; i < Battle.getTim2().size(); i++) {
-            if(i==0){
-                poke1.setIcon(Battle.getTim2().get(i).getGambar());
-                button1.setEnabled(true);
-                button1.setText(Battle.getTim2().get(i).getNama());
-            }else if(i==1){
-                poke2.setIcon(Battle.getTim2().get(i).getGambar());
-                button2.setEnabled(true);
-                button2.setText(Battle.getTim2().get(i).getNama());
-            }else if(i==2){
-                poke3.setIcon(Battle.getTim2().get(i).getGambar());
-                button3.setEnabled(true);
-                button3.setText(Battle.getTim2().get(i).getNama());
-            }
-            
-            
-        }
+//        for (int i = 0; i < Battle.getTim2().size(); i++) {
+//            if(i==0){
+//                poke1.setIcon(Battle.getTim2().get(i).getGambar());
+//                button1.setEnabled(true);
+//                button1.setText(Battle.getTim2().get(i).getNama());
+//            }else if(i==1){
+//                poke2.setIcon(Battle.getTim2().get(i).getGambar());
+//                button2.setEnabled(true);
+//                button2.setText(Battle.getTim2().get(i).getNama());
+//            }else if(i==2){
+//                poke3.setIcon(Battle.getTim2().get(i).getGambar());
+//                button3.setEnabled(true);
+//                button3.setText(Battle.getTim2().get(i).getNama());
+//            }
+//            
+//            
+//        }
     }
 
     /**

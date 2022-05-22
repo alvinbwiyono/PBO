@@ -79,8 +79,11 @@ public class Battle extends javax.swing.JFrame {
         ultenemypoison=0;
         ultallypoison=0;
         dmgpoison=new int[2];
+        
+        
         arena.setIcon(icon);
         tim.clear();
+        
         // Untuk Clone Lobby.teams 
         for (int i = 0; i < 3; i++) {
             try {
@@ -138,6 +141,7 @@ public class Battle extends javax.swing.JFrame {
         ally.setIcon(tim.get(0).getGambar());
         enemy.setIcon(musuh.get(0).getGambar());
         
+        // Timer untuk Stun
         t = new Timer(1000,new ActionListener(){
             public void actionPerformed(ActionEvent event){
                     atk.setEnabled(false);
@@ -281,6 +285,7 @@ public class Battle extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    // Update Health di Layar
     private static void updatehealth(){
         try{
             AllyHealth.setValue(tim.get(0).getCurrHealth());
@@ -290,7 +295,7 @@ public class Battle extends javax.swing.JFrame {
         }
         
     }
-    
+    // Exit
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
@@ -299,22 +304,28 @@ public class Battle extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    // Basic Attack
     private void atkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atkActionPerformed
 
         // TODO add your handling code here:
         Sound.attack();
+        
         musuh.get(0).setCurrHealth(musuh.get(0).getCurrHealth()-tim.get(0).getDamage());
         turn++;
+        
         updatehealth();
         cekmenang();
 
         if(enemystun==0){
             gerakmusuh();
         }
+        
         cekstun();
         turn--;
+        
         cekpoison();
         updatehealth();
+        
         cekmenang();
         cekbutton();
     }//GEN-LAST:event_atkActionPerformed
@@ -326,6 +337,7 @@ public class Battle extends javax.swing.JFrame {
         for (int i = 0; i < tim.size(); i++) {
             possibilities[i]=tim.get(i).getNama();
         }
+        // Pop Up Pilih Ult
         String s = (String)JOptionPane.showInputDialog(
                     this,
                     "Select Pokemon",
@@ -336,9 +348,9 @@ public class Battle extends javax.swing.JFrame {
                     tim.get(0).getNama());
         try{
             if(s.equals(tim.get(0).getNama())){
-            tim.get(0).ult();
-            jmlultially=0;
-            ult.setEnabled(false);
+                tim.get(0).ult();
+                jmlultially=0;
+                ult.setEnabled(false);
             }else if(s.equals(tim.get(1).getNama())){
                 tim.get(1).ult();
                 jmlultially=0;
@@ -351,15 +363,18 @@ public class Battle extends javax.swing.JFrame {
             turn++;
             updatehealth();
             cekmenang();
+            
             if(enemystun==0){
                 gerakmusuh();
             }
+            
             cekstun();
             turn--;
             cekpoison();
             updatehealth();
             cekmenang();
             cekbutton();
+            
         } catch (NullPointerException ex){
             
         }
@@ -435,7 +450,7 @@ public class Battle extends javax.swing.JFrame {
                 cooldownenemy=5;
             }else if(pil==1){
                 pil--;
-        }
+            }
             if(pil==0){
                 tim.get(0).setCurrHealth(tim.get(0).getCurrHealth()-musuh.get(0).getDamage());
             }
@@ -452,6 +467,7 @@ public class Battle extends javax.swing.JFrame {
         ally.setIcon(tim.get(0).getGambar());
         enemy.setIcon(musuh.get(0).getGambar());
     }
+    
     private void cekmenang(){
         if(tim.get(0).getCurrHealth()<=0){
             tim.remove(0);
@@ -487,6 +503,8 @@ public class Battle extends javax.swing.JFrame {
         }
         
     }
+    
+    
     private void cekbutton(){
         if(cooldownbutton==0){
             skil.setEnabled(true);
@@ -539,19 +557,9 @@ public class Battle extends javax.swing.JFrame {
     public static void setEnemydmgreduc(int enemydmgreduc) {
         Battle.enemydmgreduc = enemydmgreduc;
     }
-
     
-
-    public static int getUltenemypoison() {
-        return ultenemypoison;
-    }
-
     public static void setUltenemypoison(int ultenemypoison) {
         Battle.ultenemypoison = ultenemypoison;
-    }
-
-    public static int getUltallypoison() {
-        return ultallypoison;
     }
 
     public static void setUltallypoison(int ultallypoison) {
@@ -570,13 +578,6 @@ public class Battle extends javax.swing.JFrame {
         return tim.get(0);
     }
     
-    public static ArrayList<Pokemon> getMusuh2() {
-        return musuh;
-    }
-
-    public static ArrayList<Pokemon> getTim2() {
-        return tim;
-    }
     public static int getTurn() {
         return turn;
     }

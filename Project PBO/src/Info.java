@@ -207,6 +207,8 @@ public class Info extends javax.swing.JFrame {
         pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         pokeball.setBorderPainted(false);
         pokeball.setContentAreaFilled(false);
+        pokeball.setFocusPainted(false);
+        pokeball.setFocusable(false);
         pokeball.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pokeballActionPerformed(evt);
@@ -245,7 +247,7 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_arctozoltActionPerformed
 
     private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
-        Sound.soundbutton();
+        Sound.chsp();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -260,7 +262,7 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_articunoActionPerformed
 
     private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
-        Sound.soundbutton();
+        Sound.chsp();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -275,7 +277,7 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_blastoiseActionPerformed
 
     private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
-        Sound.soundbutton();
+        Sound.chsp();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);
@@ -290,7 +292,7 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_braviaryActionPerformed
 
     private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
-        Sound.soundbutton();
+        Sound.chsp();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
         pokeball.setIcon(icon);
         stats.setVisible(true);

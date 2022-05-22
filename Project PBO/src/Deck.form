@@ -153,7 +153,7 @@
     <Component class="javax.swing.JButton" name="Poke1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Pokeball.png"/>
+          <Image iconType="3" name="/Icon/Pokeball.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -171,7 +171,7 @@
     <Component class="javax.swing.JButton" name="Poke2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Pokeball.png"/>
+          <Image iconType="3" name="/Icon/Pokeball.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -189,7 +189,7 @@
     <Component class="javax.swing.JButton" name="Poke3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Pokeball.png"/>
+          <Image iconType="3" name="/Icon/Pokeball.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>

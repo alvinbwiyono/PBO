@@ -145,7 +145,7 @@ public class Deck extends javax.swing.JFrame {
         Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 189, 43));
 
-        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke1.setBorderPainted(false);
         Poke1.setContentAreaFilled(false);
         Poke1.setFocusPainted(false);
@@ -156,7 +156,7 @@ public class Deck extends javax.swing.JFrame {
         });
         getContentPane().add(Poke1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 140, 120));
 
-        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke2.setBorderPainted(false);
         Poke2.setContentAreaFilled(false);
         Poke2.setFocusPainted(false);
@@ -167,7 +167,7 @@ public class Deck extends javax.swing.JFrame {
         });
         getContentPane().add(Poke2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 140, 120));
 
-        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png"))); // NOI18N
+        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke3.setBorderPainted(false);
         Poke3.setContentAreaFilled(false);
         Poke3.setFocusPainted(false);

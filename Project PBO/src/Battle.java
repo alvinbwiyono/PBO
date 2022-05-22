@@ -210,8 +210,8 @@ public class Battle extends javax.swing.JFrame {
         atk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/battle.png"))); // NOI18N
         atk.setBorder(null);
         atk.setBorderPainted(false);
-        atk.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
-        atk.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        atk.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
+        atk.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
         atk.setFocusable(false);
         atk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,11 +223,11 @@ public class Battle extends javax.swing.JFrame {
         ult.setBackground(new java.awt.Color(255, 255, 0));
         ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ult.setForeground(new java.awt.Color(0, 0, 0));
-        ult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/death.png"))); // NOI18N
+        ult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/death.png"))); // NOI18N
         ult.setBorder(null);
         ult.setBorderPainted(false);
-        ult.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
-        ult.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        ult.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
+        ult.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
         ult.setEnabled(false);
         ult.setFocusable(false);
         ult.addActionListener(new java.awt.event.ActionListener() {
@@ -240,11 +240,11 @@ public class Battle extends javax.swing.JFrame {
         skil.setBackground(new java.awt.Color(102, 204, 0));
         skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skil.setForeground(new java.awt.Color(255, 255, 255));
-        skil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/lighting.png"))); // NOI18N
+        skil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/lighting.png"))); // NOI18N
         skil.setBorder(null);
         skil.setBorderPainted(false);
-        skil.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
-        skil.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N
+        skil.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
+        skil.setDisabledSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/close.png"))); // NOI18N
         skil.setFocusable(false);
         skil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

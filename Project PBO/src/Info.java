@@ -143,7 +143,7 @@ public class Info extends javax.swing.JFrame {
                 arctozoltActionPerformed(evt);
             }
         });
-        getContentPane().add(arctozolt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 100, 100));
+        getContentPane().add(arctozolt, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 100, 110));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

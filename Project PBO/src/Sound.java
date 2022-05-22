@@ -368,8 +368,8 @@ public class Sound {
     } 
     
     ///sfx deck
-    public static void chsp2(){
-        f = new File("src/sound/sfx/chsp2.wav");
+    public static void info(){
+        f = new File("src/sound/sfx/info.wav");
         try {
             audioIn = AudioSystem.getAudioInputStream(f.toURI().toURL());
         } catch (FileNotFoundException ex){
@@ -397,7 +397,7 @@ public class Sound {
             Logger.getLogger(Lobby.class.getName()).log(Level.SEVERE, null, ex);
         }
         FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-        volume.setValue(-5f);
+        volume.setValue(-10f);
         clip.start();
     }
 

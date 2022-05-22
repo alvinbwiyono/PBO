@@ -50,6 +50,7 @@ public class braviary extends Pokemon implements Ulti{
             }else{
                 Battle.getTim().setCurrHealth(Battle.getTim().getCurrHealth()-x);
             }
-        }    }
+        }    
+    }
     
 }

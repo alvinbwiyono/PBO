@@ -253,7 +253,7 @@ public class Battle extends javax.swing.JFrame {
         });
         getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 390, 52, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bgbutton.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/bgbutton.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 200, 180));
         getContentPane().add(enemy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 180, 100));
         getContentPane().add(ally, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 200, 100));

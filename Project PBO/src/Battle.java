@@ -42,6 +42,8 @@ public class Battle extends javax.swing.JFrame {
     private static int ultenemypoison;
     private static int ultallypoison;
     private static int dmgpoison[];
+    private int currallyult;
+    private int currenemyult;
     private Timer t=null;
     public Battle() {
         initComponents();
@@ -63,8 +65,8 @@ public class Battle extends javax.swing.JFrame {
         }
         
         // Reset data
-        jmlultially=1;
-        jmlultienemy=1;
+        jmlultially=3;
+        jmlultienemy=3;
         cooldownbutton=0;
         cooldownenemy=0;
         turn=0;
@@ -79,7 +81,8 @@ public class Battle extends javax.swing.JFrame {
         ultenemypoison=0;
         ultallypoison=0;
         dmgpoison=new int[2];
-        
+        currallyult=0;
+        currenemyult=0;
         
         arena.setIcon(icon);
         tim.clear();
@@ -349,17 +352,18 @@ public class Battle extends javax.swing.JFrame {
         try{
             if(s.equals(tim.get(0).getNama())){
                 tim.get(0).ult();
-                jmlultially=0;
+                jmlultially--;
                 ult.setEnabled(false);
             }else if(s.equals(tim.get(1).getNama())){
                 tim.get(1).ult();
-                jmlultially=0;
+                jmlultially--;
                 ult.setEnabled(false);
             }else if(s.equals(tim.get(2).getNama())){
                 tim.get(2).ult();
-                jmlultially=0;
+                jmlultially--;
                 ult.setEnabled(false);
             }
+            currallyult++;
             turn++;
             updatehealth();
             cekmenang();
@@ -436,10 +440,11 @@ public class Battle extends javax.swing.JFrame {
     private void gerakmusuh(){
         Random rand=new Random();
         int pil=rand.nextInt(3);
-        if(pil==2&&jmlultienemy==1&&musuh.get(0).cekdarah()){
-            jmlultienemy=0;
+        if(pil==2&&jmlultienemy>0&&musuh.get(0).cekdarah()&&currenemyult==0){
+            jmlultienemy--;
             int idx=rand.nextInt(musuh.size());
             musuh.get(idx).ult();
+            currenemyult++;
         }else if(pil==2){
             pil--;
         }
@@ -473,6 +478,7 @@ public class Battle extends javax.swing.JFrame {
             tim.remove(0);
             enemypermapoison=0;
             allydmgreduc=0;
+            currallyult=0;
             if(tim.size()==0){
                 Sound.lose();
                 JOptionPane.showMessageDialog(this, "You Lose");
@@ -488,6 +494,7 @@ public class Battle extends javax.swing.JFrame {
                 musuh.remove(0);
                 allypermapoison=0;
                 enemydmgreduc=0;
+                currenemyult=0;
                 if(musuh.size()==0){
                     Sound.win();
                     JOptionPane.showMessageDialog(this, "You Win");
@@ -518,7 +525,7 @@ public class Battle extends javax.swing.JFrame {
             enemystun--;
         }
         try{
-            if(tim.get(0).cekdarah()&&jmlultially==1){
+            if(tim.get(0).cekdarah()&&jmlultially>0&&currallyult==0){
                 ult.setEnabled(true);
             }else{
                 ult.setEnabled(false);

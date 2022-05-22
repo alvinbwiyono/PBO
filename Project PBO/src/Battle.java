@@ -207,7 +207,7 @@ public class Battle extends javax.swing.JFrame {
         atk.setBackground(new java.awt.Color(255, 0, 51));
         atk.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         atk.setForeground(new java.awt.Color(255, 255, 255));
-        atk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/battle.png"))); // NOI18N
+        atk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/battle.png"))); // NOI18N
         atk.setBorder(null);
         atk.setBorderPainted(false);
         atk.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/close.png"))); // NOI18N

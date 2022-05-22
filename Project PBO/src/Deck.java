@@ -264,7 +264,6 @@ public class Deck extends javax.swing.JFrame {
             Lobby.teams = save.tim;
             ois.close();
             fis.close();
-            JOptionPane.showMessageDialog(this, "Sukses Load Data!");
             Sound.soundbutton();
         } catch (FileNotFoundException ex) {
             
@@ -334,6 +333,7 @@ public class Deck extends javax.swing.JFrame {
                     }
                 }
             }
+            JOptionPane.showMessageDialog(this, "Sukses Load Data!");
         }
     }//GEN-LAST:event_LoadActionPerformed
 

@@ -61,7 +61,7 @@ public class Menu extends javax.swing.JFrame {
                 timActionPerformed(evt);
             }
         });
-        getContentPane().add(tim, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 106, 143, 38));
+        getContentPane().add(tim, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 143, 38));
 
         info.setBackground(new java.awt.Color(255, 255, 51));
         info.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -74,7 +74,7 @@ public class Menu extends javax.swing.JFrame {
                 infoActionPerformed(evt);
             }
         });
-        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 172, 143, 38));
+        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 143, 38));
 
         battle.setBackground(new java.awt.Color(255, 51, 51));
         battle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -87,7 +87,7 @@ public class Menu extends javax.swing.JFrame {
                 battleActionPerformed(evt);
             }
         });
-        getContentPane().add(battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 237, 143, 38));
+        getContentPane().add(battle, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 143, 38));
 
         back.setBackground(new java.awt.Color(255, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class Menu extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 304, 143, 38));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 143, 38));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bg2.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

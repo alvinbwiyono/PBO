@@ -33,11 +33,6 @@ public class Info extends javax.swing.JFrame {
         this.setLocation(x, y);
         pokeball.setVisible(true);
         stats.setVisible(false);
-//        arcticunoImage.setVisible(false);
-//        arctozoltImage.setVisible(false);
-//        blastoiseImage.setVisible(false);
-//        braviaryImage.setVisible(false);
-//        pikachuImage.setVisible(false);
         skill.setVisible(false);
         ulti.setVisible(false);
         
@@ -80,11 +75,11 @@ public class Info extends javax.swing.JFrame {
 
         skil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skil.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 310, 370, 20));
+        getContentPane().add(skil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 370, 20));
 
         ult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ult.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 520, 20));
+        getContentPane().add(ult, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 520, 20));
 
         articuno.setBackground(new java.awt.Color(204, 204, 204));
         articuno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"))); // NOI18N
@@ -176,7 +171,7 @@ public class Info extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("BACK");
         jButton1.setBorderPainted(false);
@@ -197,17 +192,17 @@ public class Info extends javax.swing.JFrame {
         stats.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         stats.setForeground(new java.awt.Color(255, 255, 255));
         stats.setText("STATS : ");
-        getContentPane().add(stats, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        getContentPane().add(stats, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, -1, -1));
 
         skill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         skill.setForeground(new java.awt.Color(255, 255, 255));
         skill.setText("SKILL : ");
-        getContentPane().add(skill, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
+        getContentPane().add(skill, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
 
         ulti.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ulti.setForeground(new java.awt.Color(255, 255, 255));
         ulti.setText("ULTI    : ");
-        getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+        getContentPane().add(ulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, -1, -1));
 
         pokeball.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         pokeball.setBorderPainted(false);
@@ -221,11 +216,11 @@ public class Info extends javax.swing.JFrame {
 
         ATTACK.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         ATTACK.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(ATTACK, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 80, 20));
+        getContentPane().add(ATTACK, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, 80, 20));
 
         HP1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         HP1.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(HP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 80, 20));
+        getContentPane().add(HP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 20));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Background/bg9.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
@@ -235,11 +230,6 @@ public class Info extends javax.swing.JFrame {
     
     
     private void arctozoltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arctozoltActionPerformed
-//        arcticunoImage.setVisible(false);
-//        arctozoltImage.setVisible(true);
-//        blastoiseImage.setVisible(false);
-//        braviaryImage.setVisible(false);
-//        pikachuImage.setVisible(false);
         Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/arctozolt.png"));
         pokeball.setIcon(icon);
@@ -255,11 +245,6 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_arctozoltActionPerformed
 
     private void articunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_articunoActionPerformed
-//        arcticunoImage.setVisible(true);
-//        arctozoltImage.setVisible(false);
-//        blastoiseImage.setVisible(false);
-//        braviaryImage.setVisible(false);
-//        pikachuImage.setVisible(false);
         Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/articuno.png"));
         pokeball.setIcon(icon);
@@ -275,11 +260,6 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_articunoActionPerformed
 
     private void blastoiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blastoiseActionPerformed
-//        arcticunoImage.setVisible(false);
-//        arctozoltImage.setVisible(false);
-//        blastoiseImage.setVisible(true);
-//        braviaryImage.setVisible(false);
-//        pikachuImage.setVisible(false);
         Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/blastoise-gmax.png"));
         pokeball.setIcon(icon);
@@ -295,11 +275,6 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_blastoiseActionPerformed
 
     private void braviaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_braviaryActionPerformed
-//        arcticunoImage.setVisible(false);
-//        arctozoltImage.setVisible(false);
-//        blastoiseImage.setVisible(false);
-//        braviaryImage.setVisible(true);
-//        pikachuImage.setVisible(false);
         Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/braviary.png"));
         pokeball.setIcon(icon);
@@ -315,11 +290,6 @@ public class Info extends javax.swing.JFrame {
     }//GEN-LAST:event_braviaryActionPerformed
 
     private void pikachuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pikachuActionPerformed
-//        arcticunoImage.setVisible(false);
-//        arctozoltImage.setVisible(false);
-//        blastoiseImage.setVisible(false);
-//        braviaryImage.setVisible(false);
-//        pikachuImage.setVisible(true);
         Sound.soundbutton();
         Icon icon = new javax.swing.ImageIcon(getClass().getResource("/pokemon_kita/pikachu.png"));
         pokeball.setIcon(icon);

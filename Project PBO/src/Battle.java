@@ -32,11 +32,9 @@ public class Battle extends javax.swing.JFrame {
     private static int enemystun,allystun;
     private static int allypoison,enemypoison;
     private static int enemypermapoison,allypermapoison;
-    private static int allydmgreduc;
-    private static int enemydmgreduc;
+    private static int allydmgreduc,enemydmgreduc;
     private static int dmgpoison[];
-    private int currallyult;
-    private int currenemyult;
+    private int currallyult, currenemyult;
     private Timer t=null;
     public Battle() {
         initComponents();

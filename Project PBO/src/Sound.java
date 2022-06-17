@@ -26,7 +26,6 @@ public class Sound {
     static File f;
     static AudioInputStream audioIn=null;
     static Clip clip = null;
-    static ArrayList<Pokemon> teams = new ArrayList<>();
     
     public static void soundbutton(){
         f = new File("src/sound/sfx/Buttons sound.wav");

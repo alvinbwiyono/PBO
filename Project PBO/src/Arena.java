@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 public class Arena extends javax.swing.JFrame {
     
     static int pilArena;
-    Deck deck;
     
     public Arena() {
         initComponents();

@@ -26,21 +26,14 @@ public class Battle extends javax.swing.JFrame {
      */
     private static ArrayList<Pokemon> musuh=new ArrayList<>();
     private static ArrayList<Pokemon> tim=new ArrayList<>();
-    private static int jmlultially;    
-    private static int jmlultienemy;    
-    private static int cooldownbutton;
-    private static int cooldownenemy;
+    private static int jmlultially,jmlultienemy;    
+    private static int cooldownbutton,cooldownenemy;
     private static int turn;
-    private static int enemystun;
-    private static int allystun;
-    private static int allypoison;
-    private static int enemypoison;
-    private static int enemypermapoison;
-    private static int allypermapoison;
+    private static int enemystun,allystun;
+    private static int allypoison,enemypoison;
+    private static int enemypermapoison,allypermapoison;
     private static int allydmgreduc;
     private static int enemydmgreduc;
-    private static int ultenemypoison;
-    private static int ultallypoison;
     private static int dmgpoison[];
     private int currallyult;
     private int currenemyult;
@@ -78,8 +71,6 @@ public class Battle extends javax.swing.JFrame {
         allypermapoison=0;
         allydmgreduc=0;
         enemydmgreduc=0;
-        ultenemypoison=0;
-        ultallypoison=0;
         dmgpoison=new int[2];
         currallyult=0;
         currenemyult=0;
@@ -563,14 +554,6 @@ public class Battle extends javax.swing.JFrame {
 
     public static void setEnemydmgreduc(int enemydmgreduc) {
         Battle.enemydmgreduc = enemydmgreduc;
-    }
-    
-    public static void setUltenemypoison(int ultenemypoison) {
-        Battle.ultenemypoison = ultenemypoison;
-    }
-
-    public static void setUltallypoison(int ultallypoison) {
-        Battle.ultallypoison = ultallypoison;
     }
 
     public static void setDmgpoison(int idx,int dmg) {

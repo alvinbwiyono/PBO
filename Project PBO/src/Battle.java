@@ -429,16 +429,16 @@ public class Battle extends javax.swing.JFrame {
     private void gerakmusuh(){
         Random rand=new Random();
         int pil=rand.nextInt(3);
-        if(pil==2&&jmlultienemy>0&&musuh.get(0).cekdarah()&&currenemyult==0){
-            jmlultienemy--;
-            int idx=rand.nextInt(musuh.size());
-            musuh.get(idx).ult();
-            currenemyult++;
-        }else if(pil==2){
-            pil--;
-        }
         
         try {
+            if(pil==2&&jmlultienemy>0&&musuh.get(0).cekdarah()&&currenemyult==0){
+                jmlultienemy--;
+                int idx=rand.nextInt(musuh.size());
+                musuh.get(idx).ult();
+                currenemyult++;
+            }else if(pil==2){
+                pil--;
+            }
             if(pil==1&&cooldownenemy==0){
                 musuh.get(0).skill();
                 cooldownenemy=5;

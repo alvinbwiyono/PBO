@@ -65,41 +65,57 @@ public class Arena extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        back.setBackground(new java.awt.Color(153, 204, 255));
+        back.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
         back.setText("BACK");
+        back.setBorderPainted(false);
         back.setFocusPainted(false);
+        back.setOpaque(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
-        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
+        next.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        next.setForeground(new java.awt.Color(255, 255, 255));
         next.setText("NEXT");
+        next.setContentAreaFilled(false);
         next.setFocusPainted(false);
         next.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextActionPerformed(evt);
             }
         });
-        getContentPane().add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(663, 170, 80, -1));
+        getContentPane().add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 80, -1));
 
-        previous.setText("PREVIOUS");
+        previous.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        previous.setForeground(new java.awt.Color(255, 255, 255));
+        previous.setText("PREV");
+        previous.setContentAreaFilled(false);
         previous.setFocusPainted(false);
+        previous.setOpaque(false);
         previous.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousActionPerformed(evt);
             }
         });
-        getContentPane().add(previous, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 100, -1));
+        getContentPane().add(previous, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 70, -1));
 
+        start.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        start.setForeground(new java.awt.Color(255, 255, 255));
         start.setText("START");
+        start.setContentAreaFilled(false);
         start.setFocusPainted(false);
+        start.setOpaque(false);
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startActionPerformed(evt);
             }
         });
-        getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, -1, -1));
+        getContentPane().add(start, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, -1));
 
         Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Pokeball.png"))); // NOI18N
         Poke1.setBorderPainted(false);

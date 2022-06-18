@@ -71,7 +71,6 @@ public class Arena extends javax.swing.JFrame {
         back.setText("BACK");
         back.setBorderPainted(false);
         back.setFocusPainted(false);
-        back.setOpaque(false);
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
@@ -82,6 +81,7 @@ public class Arena extends javax.swing.JFrame {
         next.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         next.setForeground(new java.awt.Color(255, 255, 255));
         next.setText("NEXT");
+        next.setBorderPainted(false);
         next.setContentAreaFilled(false);
         next.setFocusPainted(false);
         next.addActionListener(new java.awt.event.ActionListener() {
@@ -94,9 +94,9 @@ public class Arena extends javax.swing.JFrame {
         previous.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         previous.setForeground(new java.awt.Color(255, 255, 255));
         previous.setText("PREV");
+        previous.setBorderPainted(false);
         previous.setContentAreaFilled(false);
         previous.setFocusPainted(false);
-        previous.setOpaque(false);
         previous.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousActionPerformed(evt);
@@ -107,9 +107,9 @@ public class Arena extends javax.swing.JFrame {
         start.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         start.setForeground(new java.awt.Color(255, 255, 255));
         start.setText("START");
+        start.setBorderPainted(false);
         start.setContentAreaFilled(false);
         start.setFocusPainted(false);
-        start.setOpaque(false);
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startActionPerformed(evt);

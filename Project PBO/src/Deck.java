@@ -464,7 +464,7 @@ public class Deck extends javax.swing.JFrame {
     private void Poke1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke1ActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
         poke[0] = false;
 
         Pokemon temp = teams.get(0);
@@ -486,7 +486,7 @@ public class Deck extends javax.swing.JFrame {
     private void Poke2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke2ActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
         poke[1] = false;
 
         Pokemon temp = teams.get(1);
@@ -508,7 +508,7 @@ public class Deck extends javax.swing.JFrame {
     private void Poke3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Poke3ActionPerformed
         // TODO add your handling code here:
         Sound.soundbutton();
-        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+        Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
         poke[2] = false;
 
         Pokemon temp = teams.get(2);

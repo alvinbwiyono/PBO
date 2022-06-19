@@ -53,8 +53,6 @@ public class Settings extends javax.swing.JFrame {
         LMute = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/settingsbackground.png"))); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -281,9 +281,9 @@ public class Deck extends javax.swing.JFrame {
             Braviary.setVisible(true);
             Pikachu.setVisible(true);
 
-            Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
-            Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
-            Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pokeball.png")));
+            Poke1.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
+            Poke2.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
+            Poke3.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/Pokeball.png")));
             this.teams.clear();
             for (int i = 0; i < 3; i++) {
                 this.teams.add(null);
